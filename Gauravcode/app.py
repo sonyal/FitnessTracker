@@ -1,57 +1,52 @@
 
-from flask import Flask, redirect, url_for, render_template,flash
-from tutorialsearch import RegistrationForm
+from flask import Flask, redirect, url_for, render_template,flash, request
+from tutorialsearch import RegistrationForm, TestLinkProxy
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
 
+
 @app.route("/")
-def hello():
+def home():
     return render_template('template.html')
 
-#@app.route("/home")
-#def home():
-#    return render_template('home.html', posts=posts)
+
+@app.route("/Cardiovascular", methods=['GET', 'POST'])
+def cardiovascular():
+    return render_template('cardio.html')
 
 
-#@app.route("/about")
-#def about():
-#    return render_template('about.html', title='About')
+@app.route("/Flexibility", methods=['GET', 'POST'])
+def flexibility():
+    return render_template('flex.html')
+
+
+@app.route("/Strength", methods=['GET', 'POST'])
+def strength():
+    return render_template('Strength.html')
 
 
 @app.route("/tutorial", methods=['GET', 'POST'])
-def register():
-    form = RegistrationForm()
-    #if form.validate_on_submit():
-    #    flash(f'Account created for {form.username.data}!', 'success')
-    #    return redirect(url_for('about'))
-    return render_template('tutorialsearch.html', title='Tutorial', form=form)
-
-
-#@app.route("/login", methods=['GET', 'POST'])
-#def login():
-#    form = LoginForm()
-#    if form.validate_on_submit():
-#        if form.email.data == 'admin@blog.com' and form.password.data == 'password':
-#            flash('You have been logged in!', 'success')
-#            return redirect(url_for('home'))
-#        else:
-#            flash('Login Unsuccessful. Please check username and password', 'danger')
-#    return render_template('login.html', title='Login', form=form)
+def tutorial():
+    if request.method == "POST":
+        user = request.form["nm"]
+        test_link = TestLinkProxy()
+        test_results = test_link.test_link(user)
+        if test_results == -1 :
+            flash("Not a valid Workout Plan", "danger")
+        if test_results == 0:
+            return redirect(url_for("cardiovascular"))
+        if test_results == 1:
+            return redirect(url_for("flexibility"))
+        if test_results == 2:
+            return redirect(url_for("strength"))
+        return render_template('tutorialsearch.html')
+    else:
+        return render_template('tutorialsearch.html')
 
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-#@app.route("/<name>")
-#def user(name):
-#    return f"Hello {name}!"
-
-#@app.route("/admin")
-#def admin():
-#    return redirect(url_for("user", name = "Admin!"))
-
 
 if __name__ == "__main__":
     app.run()
