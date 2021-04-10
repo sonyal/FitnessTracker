@@ -13,10 +13,10 @@
 - Will display a JSON object of the generated workout given your strength
 
 ### Workout Proxy
-- Utilizes 'argsparse' to required valid inputs
+- Utilizes `argsparse` to required valid inputs
 - Invalid inputs will stop execution and print out help and proper usage
 
 ### Backend Tests
 - Open PyCharm
-- Open the 'physical_fitness_regime_tests.py' file
-- Click run tests on class 'PhysicalFitnessTests'
+- Open the `physical_fitness_regime_tests.py` file
+- Click run tests on class `PhysicalFitnessTests`
