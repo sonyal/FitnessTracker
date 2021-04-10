@@ -18,10 +18,6 @@ power_scale = [0.4, 0.5, 0.6, 0.75, 0.8, 0.85]
 power_reps = [5, 5, 3, 5, 5, 5]
 
 
-class Tester:
-    pass
-
-
 def make_month_workout_json(request: dict) -> json:
     """ Upon calling make_month_workout_json, a workout is made using make_month_workout and is then dumped into a
     json object with pretty printing formatting
