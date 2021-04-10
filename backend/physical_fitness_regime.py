@@ -18,6 +18,10 @@ power_scale = [0.4, 0.5, 0.6, 0.75, 0.8, 0.85]
 power_reps = [5, 5, 3, 5, 5, 5]
 
 
+class Tester:
+    pass
+
+
 def make_month_workout_json(request: dict) -> json:
     """ Upon calling make_month_workout_json, a workout is made using make_month_workout and is then dumped into a
     json object with pretty printing formatting
@@ -73,7 +77,7 @@ def make_week_workout(request: dict) -> dict:
     workout = {}
     monday_request = {'power': ('overhead_press', request['overhead_press']),
                       'endurance': ('bench_press', request['bench_press'])}
-    workout['monday'] = make_lower_body_workout(monday_request)
+    workout['monday'] = make_upper_body_workout(monday_request)
 
     wednesday_request = {'power': ('deadlift', request['deadlift']),
                          'endurance': ('squat', request['squat'])}
@@ -81,7 +85,7 @@ def make_week_workout(request: dict) -> dict:
 
     friday_request = {'power': ('bench_press', request['bench_press']),
                       'endurance': ('overhead_press', request['overhead_press'])}
-    workout['friday'] = make_lower_body_workout(friday_request)
+    workout['friday'] = make_upper_body_workout(friday_request)
 
     sunday_request = {'power': ('squat', request['squat']),
                       'endurance': ('deadlift', request['deadlift'])}

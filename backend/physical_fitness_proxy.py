@@ -1,5 +1,5 @@
 import argparse
-#import physical_fitness_regime
+import physical_fitness_regime
 
 """
 Required Arguments to physical_fitness_proxy:
@@ -57,4 +57,4 @@ def format_args(arguments: argparse.Namespace) -> dict:
 
 args = get_args()
 request = format_args(args)
-#print(physical_fitness_regime.make_month_workout_json(request))
+print(physical_fitness_regime.make_month_workout_json(request))
