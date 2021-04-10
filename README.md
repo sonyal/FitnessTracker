@@ -17,6 +17,7 @@
 - Invalid inputs will stop execution and print out help and proper usage
 
 ### Backend Tests
-- Open PyCharm
+- Open the project in PyCharm
+- Select directory `backend` as sources root in the settings
 - Open the `physical_fitness_regime_tests.py` file
 - Click run tests on class `PhysicalFitnessTests`
