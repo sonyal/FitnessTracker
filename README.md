@@ -2,6 +2,12 @@
 
 ## Frontend
 
+### Tutorial Page
+- There's a search bar that allows the user (theoretically) to search specific workouts or workout categories such as Cardiovascular, Flexibility, and Strength.
+- Searching for a specific exercise will open a new page where categories live in and will display a list of other similar exercises.
+- Searching for a category will bring the user to a new page where the searched category is, displaying a list of popular exercises in that category.
+- In the next Sprint, YouTube videos for each exercise will either be embedded or linked to provide the user with a demonstration.
+
 ## Backend
 
 ### Creating a workout
@@ -21,6 +27,11 @@
 usage: physical_fitness_proxy.py [-h] --overhead_press OVERHEAD_PRESS --bench_press BENCH_PRESS --squat SQUAT --deadlift DEADLIFT
 physical_fitness_proxy.py: error: the following arguments are required: --bench_press, --squat, --deadlift
 ```
+
+### Searching within the Tutorial page
+- In terminal, ensure directory is set to `fitness-tracker`
+- Run command `python3 backend/app.py`
+
 
 ### Backend Tests
 - Requires pytest, which can be installed using `pip install -U pytest`
