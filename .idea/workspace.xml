@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="125141f0-05e6-4a78-8018-68db3d852ae4" name="Default Changelist" comment="" />
+    <list default="true" id="125141f0-05e6-4a78-8018-68db3d852ae4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/styling/css/bootstrap-grid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/styling/css/bootstrap-grid.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/styling/css/bootstrap-grid.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/styling/css/bootstrap-grid.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/styling/css/bootstrap-reboot.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/styling/css/bootstrap-reboot.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/styling/css/bootstrap-reboot.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/styling/css/bootstrap-reboot.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/styling/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/styling/css/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/styling/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/styling/css/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/styling/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/styling/demo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/styling/demo1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/styling/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/styling/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/styling/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/styling/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/styling/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/styling/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/styling/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/styling/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/styling/js/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/styling/js/scripts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/styling/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/styling/team.gif" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
