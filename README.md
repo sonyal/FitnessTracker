@@ -99,7 +99,10 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
 ## Team Contributions
 
 ### Adam Aguilera
-
+- Added workout regime generation based on user input, calculates proper workout weight and repetition based on passed parameters
+- Added tests to validate input for workout parameters
+- Added continuous integration for the backed , running tests automatically when a merge is created
+- Added a proxy that validates input for workout regime returning helper output for incorrect inputs
 ### Gaurav Arora
 
 ### John Blanco
