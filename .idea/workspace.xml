@@ -3,34 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="125141f0-05e6-4a78-8018-68db3d852ae4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/styling/css/bootstrap-grid.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/styling/css/bootstrap-grid.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/styling/css/bootstrap-grid.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/styling/css/bootstrap-grid.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/styling/css/bootstrap-reboot.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/styling/css/bootstrap-reboot.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/styling/css/bootstrap-reboot.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/styling/css/bootstrap-reboot.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/styling/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/styling/css/bootstrap.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/styling/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/styling/css/bootstrap.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/styling/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/styling/demo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/styling/demo1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/styling/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/styling/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/styling/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/styling/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/styling/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/styling/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/styling/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/styling/js/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/styling/js/popper.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/styling/js/scripts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/styling/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/styling/team.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +13,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -66,7 +39,24 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../mastermind_v2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend/tests/SearchTest.py" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Unittests in SearchTest.py" type="tests" factoryName="Unittests" nameIsGenerated="true">
+      <module name="fitness-tracker" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="C:\Users\gaura\anaconda3\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_pattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/frontend/tests/SearchTest.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -89,5 +79,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
