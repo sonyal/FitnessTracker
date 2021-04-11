@@ -8,7 +8,18 @@
 - The project will now sit in the 'fitness-tracker' folder within the directory you are in currently
   
 ## Running the app
-- 
+-Ensure Pycharm is installed on your machine. Pycharm can be installed [here](https://www.jetbrains.com/pycharm/download/)
+-Also ensure python3 is installed. [here](https://www.python.org/downloads/)
+-Open this folder inside Pycharm. This is used by doing File then Open.
+-In the terminal inside Pycharm do `pip install -U WTForms`
+-In the terminal inside Pycharm do `pip install -U Flask`
+-In the terminal inside Pycharm do `pip install wtforms-validators`
+-In the terminal inside Pycharm do `pip install Flask-WTF`
+- After you have done the following instalations, you can run our app on your computer
+- In your terminal go to the `frontend` directory. You can type `cd frontend` in your Pycharm terminal if you are already in `fitness-tracker` folder.
+- To run our app, Type `python app.py`
+-Go to the website in the terminal. It should be a link such as `http://127.0.0.1:5000/`. This may not be the exact link.
+
 
 ## Frontend
 ### Home Page
@@ -17,9 +28,14 @@
 - 3 tile cards along bottom of homepage include more detailed information about the app and the team behind it. Below each description is a link to read more. These links do not redirect the user to another page, but rather opens modals that popover the homepage to provide more information on each card
 
 ### Tutorial Search Page
-- 
-- Style formatting for page will be added in next sprint
-  
+- The Tutorial Search Page has a navigation bar at the top which can go to the home page or back to the tutorial search page
+- It also has a search bar. The search bar currently only searches Flexibility, Cardiovascular, and Strength. When a user searches for these words
+it goes to the following page with the tutorial.
+-If a user fails to do a proper search, A notifcations appears at the top that it is an invalid search.
+- In the next Sprint:
+     - Add many more possible searches
+     - Make Page look more presentable to the user
+     - Link to Spesific workouts if Searched
 
 ### Login Page
 - 
