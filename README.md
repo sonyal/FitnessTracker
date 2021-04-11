@@ -8,17 +8,17 @@
 - The project will now sit in the 'fitness-tracker' folder within the directory you are in currently
   
 ## Running the app
--Ensure Pycharm is installed on your machine. Pycharm can be installed [here](https://www.jetbrains.com/pycharm/download/)
--Also ensure python3 is installed. [here](https://www.python.org/downloads/)
--Open this folder inside Pycharm. This is used by doing File then Open.
--In the terminal inside Pycharm do `pip install -U WTForms`
--In the terminal inside Pycharm do `pip install -U Flask`
--In the terminal inside Pycharm do `pip install wtforms-validators`
--In the terminal inside Pycharm do `pip install Flask-WTF`
+- Ensure Pycharm is installed on your machine. Pycharm can be installed [here](https://www.jetbrains.com/pycharm/download/)
+- Also ensure python3 is installed. [here](https://www.python.org/downloads/)
+- Open this folder inside Pycharm. This is used by doing File then Open.
+- In the terminal inside Pycharm do `pip install -U WTForms`
+- In the terminal inside Pycharm do `pip install -U Flask`
+- In the terminal inside Pycharm do `pip install wtforms-validators`
+- In the terminal inside Pycharm do `pip install Flask-WTF`
 - After you have done the following instalations, you can run our app on your computer
 - In your terminal go to the `frontend` directory. You can type `cd frontend` in your Pycharm terminal if you are already in `fitness-tracker` folder.
 - To run our app, Type `python app.py`
--Go to the website in the terminal. It should be a link such as `http://127.0.0.1:5000/`. This may not be the exact link.
+- Go to the website in the terminal. It should be a link such as `http://127.0.0.1:5000/`. This may not be the exact link.
 
 
 ## Frontend
