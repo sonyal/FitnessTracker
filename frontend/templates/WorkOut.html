@@ -1,0 +1,22 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+<h2>Work Out Plan</h2>
+<img src="https://brand.assets.adidas.com/f_auto,q_auto,fl_lossy/capi/enUS/Images/short-workout-blog-hero-image-d_221-531811.jpg"
+     alt="workout" width="960" height="345">
+<form action = "" method="post">
+    <p>
+        {{form.weight.label}} <br>
+        {{form.weight(size=30)}}
+    </p>
+    <p>
+        {{form.height.label}} <br>
+        {{form.height(size=30)}}
+    </p>
+    <p>
+        {{form.submit()}}
+    </p>
+</form>
+
+{% endblock %}

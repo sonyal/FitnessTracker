@@ -1,6 +1,7 @@
 
 from flask import Flask, redirect, url_for, render_template,flash, request
 from tutorialsearch import RegistrationForm, TestLinkProxy
+from forms import SignUpForm, WorkOutForm
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
@@ -43,6 +44,22 @@ def tutorial():
         return render_template('tutorialsearch.html')
     else:
         return render_template('tutorialsearch.html')
+
+
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    form = SignUpForm()
+    if form.is_submitted():
+        result = request.form
+    return render_template('signup.html', form=form)
+
+
+@app.route('/WorkOut', methods=['GET', 'POST'])
+def workout():
+    form = WorkOutForm()
+    if form.is_submitted():
+        result = request.form
+    return render_template('WorkOut.html', form=form)
 
 
 if __name__ == '__main__':
