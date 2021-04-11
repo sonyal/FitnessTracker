@@ -114,5 +114,6 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
 ### Yifan Qin
 - Workout page design
 - Sign up page design
-- Merging with home page design & link signup and home pages
+- Merging & link signup and home pages 
+- README editing
 
