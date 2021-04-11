@@ -105,9 +105,13 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
 - Added a proxy that validates input for workout regime returning helper output for incorrect inputs
 
 ### Gaurav Arora
-- Designed tutorial webpage
-- Wrote search functionality
-- Added testing for searching in the search bar
+- Created the Baseline Flask application that everyone merged with.
+- Edited the home page and tutorial html pages to work with flask
+- Created the tutorial Search html pages
+- added basic navigation bar to tutorial and tutorial search pages
+- Created the Tutorial search bar with its functionality 
+- Added a proxy that validates the input for the search bar
+- Created 4 tests to test for the input functionality
  
 ### John Blanco
 - Static webpages for exercise Tutorials
