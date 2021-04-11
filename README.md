@@ -31,6 +31,7 @@
 - The Tutorial Search Page has a navigation bar at the top which can go to the home page or back to the tutorial search page
 - It also has a search bar. The search bar currently only searches Flexibility, Cardiovascular, and Strength. When a user searches for these words
 it goes to the following page with the tutorial.
+- signup button leads to a signup page 
 -If a user fails to do a proper search, A notifcations appears at the top that it is an invalid search.
 - In the next Sprint:
      - Add many more possible searches
@@ -42,8 +43,20 @@ it goes to the following page with the tutorial.
 - Style formatting for page will be added in next sprint
 
 ### Signup Page
-- 
+- The signup page requires users to enter their username and password information 
 - Style formatting for page will be added in next sprint
+- navigation bar to workout page
+- In the next sprint 
+     - Be able to store user information 
+     - validating user information 
+     - proxy for invalid inputs
+
+### Workout Page
+- The workout page requires users to enter their pyhsical information, (weight, height)
+- navigation bar to signup page 
+- Style formatting for page will be added in next sprint
+- In the next sprint 
+     - provide a plan based on user's physical condition
 
 ### Tutorial Page
 - There's a search bar that allows the user (theoretically) to search specific workouts or workout categories such as Cardiovascular, Flexibility, and Strength.
