@@ -4,8 +4,8 @@
 - Ensure git is installed on machine 
 - Open your terminal and ensure git is running (if a PATH variable is set up, this would simply require entering the command "git") 
 - Step into the directory in which you wish to save the code repo (app project/files)
-- Retrieve the code by entering the command "git clone git@cmsc435.garrettvanhoy.com:adamag/fitness-tracker.git"
-- The project will now sit in the 'fitness-tracker' folder within the directory you are in currently
+- Retrieve the code by entering the command `git clone git@cmsc435.garrettvanhoy.com:adamag/fitness-tracker.git`
+- The project will now sit in the `fitness-tracker` folder within the directory you are in currently
   
 ## Running the app
 - Ensure Pycharm is installed on your machine. Pycharm can be installed [here](https://www.jetbrains.com/pycharm/download/)
@@ -103,14 +103,21 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
 - Added tests to validate input for workout parameters
 - Added continuous integration for the backed , running tests automatically when a merge is created
 - Added a proxy that validates input for workout regime returning helper output for incorrect inputs
-### Gaurav Arora
 
+### Gaurav Arora
+- Designed tutorial webpage
+- Wrote search functionality
+- Added testing for searching in the search bar
+ 
 ### John Blanco
 - Static webpages for exercise Tutorials
 - Merging with Tutorial search functionality
 - README documentation writing, reviewing, and editing.
 
 ### Sonya Lew
+- Designed homepage
+- Created all graphics used
+- Wrote part of frontend documentation 
 
 ### Roger Luo
 
@@ -119,4 +126,4 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
 - Sign up page design
 - Merging & link signup and home pages 
 - README editing
-
+- 
