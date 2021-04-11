@@ -1,12 +1,23 @@
 # Fitness Tracker
 
+## Table of Contents
+* [Description](#description)
+* [Frontend](#frontend)
+* [Backend](#backend)
+* [Team Contributions](#team-contributions)
+
+## Description
+Fitness Tracker is a website to help generate a workout regime. Currently users are able to generate a workout through downloading the repository and following the instructions below.
+
+## Frontend
+
 ## Downloading the app
 - Ensure git is installed on machine 
 - Open your terminal and ensure git is running (if a PATH variable is set up, this would simply require entering the command "git") 
 - Step into the directory in which you wish to save the code repo (app project/files)
 - Retrieve the code by entering the command `git clone git@cmsc435.garrettvanhoy.com:adamag/fitness-tracker.git`
 - The project will now sit in the `fitness-tracker` folder within the directory you are in currently
-  
+
 ## Running the app
 - Ensure Pycharm is installed on your machine. Pycharm can be installed [here](https://www.jetbrains.com/pycharm/download/)
 - Also ensure python3 is installed. [here](https://www.python.org/downloads/)
@@ -20,8 +31,6 @@
 - To run our app, Type `python app.py`
 - Go to the website in the terminal. It should be a link such as `http://127.0.0.1:5000/`. This may not be the exact link.
 
-
-## Frontend
 ### Home Page
 - The homepage has a navigation bar that links to the Tutorial Search and Login pages. The app's name and logo are also buttons that link back to/refresh the homepage
 - A jumbotron displays the basic purpose of the site and a button that leads to the Signup page
@@ -39,7 +48,6 @@ it goes to the following page with the tutorial.
      - Link to Spesific workouts if Searched
 
 ### Login Page
-- 
 - Style formatting for page will be added in next sprint
 
 ### Signup Page
@@ -96,15 +104,15 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
 - In terminal, ensure directory is set to `fitness-tracker`
 - Run the command `pytest backend/tests/physical_fitness_regime_tests.py`
 
-## Team Contributions
+## Team-Contributions
 
-### Adam Aguilera
+### Adam Aguilera (20%)
 - Added workout regime generation based on user input, calculates proper workout weight and repetition based on passed parameters
 - Added tests to validate input for workout parameters
 - Added continuous integration for the backed , running tests automatically when a merge is created
 - Added a proxy that validates input for workout regime returning helper output for incorrect inputs
 
-### Gaurav Arora
+### Gaurav Arora (20%)
 - Created the Baseline Flask application that everyone merged with.
 - Edited the home page and tutorial html pages to work with flask
 - Created the tutorial Search html pages
@@ -113,21 +121,20 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
 - Added a proxy that validates the input for the search bar
 - Created 4 tests to test for the input functionality
  
-### John Blanco
+### John Blanco (20%)
 - Static webpages for exercise Tutorials
 - Merging with Tutorial search functionality
 - README documentation writing, reviewing, and editing.
 
-### Sonya Lew
+### Sonya Lew (20%)
 - Designed homepage
 - Created all graphics used
 - Wrote part of frontend documentation 
 
 ### Roger Luo
 
-### Yifan Qin
+### Yifan Qin (20%)
 - Workout page design
 - Sign up page design
 - Merging & link signup and home pages 
 - README editing
-- 
