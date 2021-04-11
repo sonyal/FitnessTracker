@@ -82,3 +82,21 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
 - Requires pytest, which can be installed using `pip install -U pytest`
 - In terminal, ensure directory is set to `fitness-tracker`
 - Run the command `pytest backend/tests/physical_fitness_regime_tests.py`
+
+## Team Contributions
+
+### Adam Aguilera
+
+### Gaurav Arora
+
+### John Blanco
+- Static webpages for exercise Tutorials
+- Merging with Tutorial search functionality
+- README documentation writing, reviewing, and editing.
+
+### Sonya Lew
+
+### Roger Luo
+
+### Yifan Qin
+
