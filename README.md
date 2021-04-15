@@ -133,6 +133,10 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
 - Wrote part of frontend documentation 
 
 ### Roger Luo
+- Login page
+- modified sign up page so now it really creates an new user
+- database to store the user information
+
 
 ### Yifan Qin (20%)
 - Workout page design
