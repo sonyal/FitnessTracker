@@ -48,6 +48,7 @@ it goes to the following page with the tutorial.
      - Link to Spesific workouts if Searched
 
 ### Login Page
+- allows users to sign in by comparing input information to the database
 - Style formatting for page will be added in next sprint
 
 ### Signup Page
