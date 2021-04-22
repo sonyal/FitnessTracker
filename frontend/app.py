@@ -50,6 +50,9 @@ def flexibility():
 def strength():
     return render_template('Strength.html')
 
+@app.route("/WeightLoss", methods=['GET', 'POST'])
+def weightloss():
+    return render_template('weightloss.html')
 
 @app.route("/tutorial", methods=['GET', 'POST'])
 def tutorial():
@@ -65,6 +68,8 @@ def tutorial():
             return redirect(url_for("flexibility"))
         if test_results == 2:
             return redirect(url_for("strength"))
+        if test_results == 3:
+            return redirect(url_for("weightloss"))
         return render_template('tutorialsearch.html')
     else:
         return render_template('tutorialsearch.html')
