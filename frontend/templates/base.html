@@ -1,17 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <title>User</title>
+    
+        <meta name="user_info" content="User information">
+    
+        <link href="../static/favicon.ico" rel="icon" type="image/x-icon" />
+        <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../static/css/style.css" rel="stylesheet">
+    
+    </head>
 <body>
 
-<div id="navbar">
-    <h2> <a href="WorkOut">Workout page</a> </h2>
-    <h2> <a href="login">Login page </a> </h2>
-    <h2> <a href="signup">Signup page </a> </h2>
+<body>
+    <div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<nav class="navbar navbar-expand-lg navbar-light bg-light">
+					<table float="left">
+						<tbody>
+							<tr>
+								<td>
+									<a class="navbar-brand" href="{{ url_for('home') }}">Home</a>
+								</td>
+								<td>
+									<a href="{{ url_for('login') }}">Login Page</a>
+								</td>
+                                <td>
+									<a href="{{ url_for('signup') }}">Signup Page</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</nav>
+			</div>
+        </div>
+    </div>
 
-</div>
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+    {% for category, message in messages %}
+    {% if category == 'error' %}
+    <div class="alert alert-danger alter-dismissable fade show" role="alert">
+        {{ message }}
+    </div>
+    {% else %}
+    <div class="alert alert-success alter-dismissable fade show" role="alert">
+        {{ message }}
+    </div>
+    {% endif %}
+    {% endfor %}
+{% endif %}
+{% endwith %}
 
 {% block content %} {% endblock %}
 
