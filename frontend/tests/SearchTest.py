@@ -1,5 +1,6 @@
 from frontend.tutorialsearch import TestLinkProxy
 import unittest
+import os
 
 
 class SearchTests(unittest.TestCase):
