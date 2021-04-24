@@ -20,9 +20,19 @@ Fitness Tracker is a website to help generate a workout regime. Currently users 
 
 ## Running the app using Docker (recommended)
 - Ensure Docker is installed on your machine. Docker can be installed [here](https://docs.docker.com/get-docker/)
+- Make sure the docker machine is running on your local machine
+    - On MacOS, that can be done by executing the following:
+    - `docker-machine start` - Start virtual machine for docker
+    - `docker-machine env` - It's helps to get environment variables
+    - `eval "$(docker-machine env default)"` - Set environment variables
 - Build the docker container using `docker build -t fitness-tracker .`
 - Run the docker container using `docker run -p 5000:5000 fitness-tracker`
 - On your browser, the website is now running on `http://0.0.0.0:5000/` or accessible [here](http://0.0.0.0:5000/)
+
+### Troubleshooting Common Errors
+- `Cannot connect to Docker daemon at ...` likely means you don't have the docker machine running
+- Fixes for Linux and MacOS can be found [here](https://stackoverflow.com/questions/21871479/docker-cant-connect-to-docker-daemon)
+- Fixing issue on Windows can be done through proper installation of docker [here](https://nickjanetakis.com/blog/setting-up-docker-for-windows-and-wsl-to-work-flawlessly)
 
 ## Running the app locally
 - Ensure python3 is installed on your machine
@@ -40,11 +50,11 @@ Fitness Tracker is a website to help generate a workout regime. Currently users 
 - It also has a search bar. The search bar currently only searches Flexibility, Cardiovascular, and Strength. When a user searches for these words
 it goes to the following page with the tutorial.
 - signup button leads to a signup page 
--If a user fails to do a proper search, A notifcations appears at the top that it is an invalid search.
+-If a user fails to do a proper search, A notifications appears at the top that it is an invalid search.
 - In the next Sprint:
      - Add many more possible searches
      - Make Page look more presentable to the user
-     - Link to Spesific workouts if Searched
+     - Link to specific workouts if Searched
 
 ### Login Page
 - allows users to sign in by comparing input information to the database
@@ -111,6 +121,8 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
     - Integrated docker for running the application
     - Added a requirements.txt to make installing packages easier for local execution / docker
     - Tested different formatting for tables for the workout regime
+    - Added new testing for the proxy and increased test coverage
+    - Updated README to include docker installation and running
 - Sprint 1:
     - Added workout regime generation based on user input, calculates proper workout weight and repetition based on passed parameters
     - Added tests to validate input for workout parameters
