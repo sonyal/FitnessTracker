@@ -21,7 +21,7 @@ Fitness Tracker is a website to help generate a workout regime. Currently users 
 ## Running the app using Docker (recommended)
 - Ensure Docker is installed on your machine. Docker can be installed [here](https://docs.docker.com/get-docker/)
 - Make sure the docker machine is running on your local machine
-    - On MacOS, that can be done by executing the following:
+    - On MacOS, that can be done by using [Docker Desktop](https://docs.docker.com/docker-for-mac/install/) or by executing the following:
     - `docker-machine start` - Start virtual machine for docker
     - `docker-machine env` - It's helps to get environment variables
     - `eval "$(docker-machine env default)"` - Set environment variables
