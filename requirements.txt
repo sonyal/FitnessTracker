@@ -1,0 +1,6 @@
+wtforms==2.3.3
+flask==1.1.2
+wtforms-validators==1.0.0
+flask-wtf==0.14.3
+pytest==6.2.3
+flask-sqlalchemy==2.5.1
