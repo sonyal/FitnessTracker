@@ -47,14 +47,14 @@
         <br>
 
         <h4>
-            Enter the maximum distance (cm) you're capable to reach for each exercise below:
+            Enter the maximum amount you're capable to do for each exercise below:
         </h4>
         </br>
         <form action="{{ url_for('flex_workout') }}" method="post">
-            <p>Sit and reach: <input type="number" min=-100 name="sit_and_reach" /></p>
-            <p>Toe touch: <input type="number" min=-100 name="toe_touch" /></p>
-            <p>Shoulder raise: <input type="number" min=0 name="shoulder_raise" /></p>
-            <p>Back Scratch: <input type="number" min=0 name="Back Scratch" /></p>
+            <p>triceps stretch: <input type="number" min=-100 name="triceps stretch" /></p>
+            <p>sit and reach: <input type="number" min=-100 name="sit and reach" /></p>
+            <p>Neck-and-Shoulder Release: <input type="number" min=0 name="Neck-and-Shoulder Release" /></p>
+            <p>up and over: <input type="number" min=0 name="up and over" /></p>
 
             <input type="submit" class="btn btn-primary" value="Create workout">
     </div>

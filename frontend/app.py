@@ -6,6 +6,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from os import path
 from temp_backend import physical_cardio_proxy as cardio_proxy
 import temp_backend.physical_fitness_proxy as strength_proxy
+import temp_backend.physical_flex_proxy as flex_proxy
 import json
 
 app = Flask(__name__)
@@ -105,6 +106,50 @@ def signup():
     return render_template("signup.html", form=form)
 
 
+@app.route("/flex_data")
+def flex_data():
+    return render_template("flex_data_input.html")
+
+
+@app.route("/flex_workout", methods=["GET", "POST"])
+def flex_workout():
+    if request.method == "POST":
+        workout = create_flex_workout(request.form)
+        return render_template("generated_flex_workout.html", result=workout)
+
+
+def create_flex_workout(request: dict) -> dict:
+    tricepsstretch = request.get("triceps stretch")
+    sitandreach = request.get("sit and reach")
+    neckandshoulderrelease = request.get("Neck-and-Shoulder Release")
+    upandover = request.get("up and over")
+    result = {
+        "triceps stretch": tricepsstretch,
+        "sit and reach": sitandreach,
+        "Neck-and-Shoulder Release": neckandshoulderrelease,
+        "up and over": upandover
+    }
+    workout = json.loads(flex_proxy.check_args(result))
+    workout = format_flex_workout(workout)
+    return workout
+
+
+def format_flex_workout(request: dict) -> dict:
+    result = {}
+    for week, value1 in request.items():
+        result[reword(week)] = {}
+        for day, value2 in value1.items():
+            result[reword(week)][day] = {}
+            for location, value3 in value2.items():
+                result[reword(week)][day][location] = {}
+                for exercise, value4 in value3.items():
+                    result[reword(week)][day][location][exercise] = {}
+                    for thing, value5 in value4.items():
+                        result[reword(week)][day][location][exercise][thing] = value5
+    return result
+
+#----------------------------------------------------------------------------------
+
 @app.route("/cardio_data")
 def cardio_data():
     return render_template("cardio_data_input.html")
@@ -115,8 +160,6 @@ def cardio_workout():
     if request.method == "POST":
         workout = create_cardio_workout(request.form)
         return render_template("generated_cardio_workout.html", result=workout)
-
-
 
 
 def create_cardio_workout(request: dict) -> dict:
@@ -133,6 +176,7 @@ def create_cardio_workout(request: dict) -> dict:
     workout = json.loads(cardio_proxy.check_args(result))
     workout = format_cardio_workout(workout)
     return workout
+
 
 def format_cardio_workout(request: dict) -> dict:
     result = {}
