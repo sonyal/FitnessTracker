@@ -120,7 +120,6 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
 - Sprint 2:
     - Integrated docker for running the application
     - Added a requirements.txt to make installing packages easier for local execution / docker
-    - Tested different formatting for tables for the workout regime
     - Added new testing for the proxy and increased test coverage
     - Updated README to include docker installation and running
 - Sprint 1:
