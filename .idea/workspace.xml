@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="125141f0-05e6-4a78-8018-68db3d852ae4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/forms/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/forms/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/forms/server.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/forms/templates/WorkOut.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/forms/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/forms/templates/signup.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/forms/templates/workout.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/temp_backend/physical_flex_regime.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/temp_backend/physical_flex_regime.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/flex_data_input.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/flex_data_input.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -47,7 +42,16 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend/tests/SearchTest.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\SPB_Data\ProjectCMSC435\fitness-tracker\frontend\temp_backend2" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\SPB_Data\ProjectCMSC435\fitness-tracker\frontend\temp_backend2" />
+      <recent name="C:\SPB_Data\ProjectCMSC435\fitness-tracker\frontend" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.app">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -57,9 +61,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\jimqi\PycharmProjects\GA1\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/frontend" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/frontend/app.py" />
