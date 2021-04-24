@@ -1,10 +1,11 @@
 
 from flask import Flask, redirect, url_for, render_template,flash, request
-from tutorialsearch import RegistrationForm, TestLinkProxy
+from tutorialsearch import TestLinkProxy
 from forms import SignUpForm, WorkOutForm, LoginForm
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
-from os import path
+from temp_backend2 import physical_cardio_proxy2 as proxy
+import json
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
@@ -97,6 +98,75 @@ def signup():
 
     return render_template('signup.html', form=form)
 
+
+@app.route("/cardio_data")
+def cardio_data():
+    return render_template("cardio_data_input.html")
+
+
+@app.route("/cardio_workout", methods=["GET", "POST"])
+def cardio_workout():
+    if request.method == "POST":
+        workout = create_workout(request.form)
+        return render_template("generated_cardio_workout.html", result=workout)
+
+
+
+
+def create_workout(request: dict) -> dict:
+    swim = request.get("swim")
+    jog = request.get("jog")
+    jumpropes = request.get("jumpropes")
+    jumpingjacks = request.get("jumpingjacks")
+    result = {
+        "swim": swim,
+        "jog": jog,
+        "jumpropes": jumpropes,
+        "jumpingjacks": int(jumpingjacks)
+    }
+    workout = json.loads(proxy.check_args(result))
+    workout = format_workout(workout)
+    return workout
+
+def format_workout(request: dict) -> dict:
+    result = {}
+    for week, value1 in request.items():
+        result[reword(week)] = {}
+        for day, value2 in value1.items():
+            result[reword(week)][day] = {}
+            for location, value3 in value2.items():
+                result[reword(week)][day][location] = {}
+                for exercise, value4 in value3.items():
+                    result[reword(week)][day][location][exercise] = {}
+                    for thing, value5 in value4.items():
+                        result[reword(week)][day][location][exercise][thing] = value5
+                #for exercise, value4 in value3.items():
+                #    result[reword(week)][day][area][reword(exercise)] = {}
+                #    for sets, value5 in value4.items():
+                #        result[reword(week)][day][area][reword(exercise)][reword(sets)] = {}
+                #        if value5 is dict:
+                #            for reps, value6 in value5.items():
+                #                result[reword(week)][day][area][reword(exercise)][reword(sets)][reword(reps)] = value6
+                #        else:
+                #            result[reword(week)][day][area][reword(exercise)][reword(sets)] = value5
+
+    return result
+
+def reword(word: str) -> str:
+    if "set-" in word:
+        return "set " + word[4]
+    if "week-" in word:
+        return "Week " + word[5]
+    switcher = {
+        "overhead_press": "overhead press",
+        "bench_press": "bench press",
+        "tricep_pushdown": "tricep pushdown",
+        "face_pulls": "face pulls",
+        "ab_wheel": "ab wheel",
+        "russian_twists": "russian twists",
+    }
+
+    return switcher.get(word, word)
 
 @app.route('/WorkOut', methods=['GET', 'POST'])
 def workout():
