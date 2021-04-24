@@ -1,0 +1,5 @@
+{
+    "python.formatting.provider": "black",
+    "python.editor.insertSpaces": true,
+    "python.editor.tabSize": 4  
+}
