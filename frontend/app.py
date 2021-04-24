@@ -1,6 +1,6 @@
 from flask import Flask, redirect, url_for, render_template, flash, request
-from tutorialsearch import RegistrationForm, TestLinkProxy
-from forms import SignUpForm, WorkOutForm, LoginForm
+from .tutorialsearch import RegistrationForm, TestLinkProxy
+from .forms import SignUpForm, WorkOutForm, LoginForm
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from os import path
