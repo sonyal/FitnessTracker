@@ -1,4 +1,3 @@
-from frontend.tutorialsearch import TestLinkProxy
 import unittest
 import os
 from frontend import app
