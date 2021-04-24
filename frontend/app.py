@@ -1,20 +1,11 @@
-<<<<<<< HEAD
-
-from flask import Flask, redirect, url_for, render_template,flash, request
-from tutorialsearch import TestLinkProxy
-from forms import SignUpForm, WorkOutForm, LoginForm
-from flask_sqlalchemy import SQLAlchemy
-from werkzeug.security import generate_password_hash, check_password_hash
-from temp_backend2 import physical_cardio_proxy2 as proxy
-=======
 from flask import Flask, redirect, url_for, render_template, flash, request
 from tutorialsearch import RegistrationForm, TestLinkProxy
 from forms import SignUpForm, WorkOutForm, LoginForm
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from os import path
-import temp_backend.physical_fitness_proxy2 as proxy
->>>>>>> develop_sonya_strength_workout_generation
+from temp_backend import physical_cardio_proxy as cardio_proxy
+import temp_backend.physical_fitness_proxy as strength_proxy
 import json
 
 app = Flask(__name__)
@@ -83,13 +74,7 @@ def tutorial():
             return redirect(url_for("flexibility"))
         if test_results == 2:
             return redirect(url_for("strength"))
-<<<<<<< HEAD
-        if test_results == 3:
-            return redirect(url_for("weightloss"))
-        return render_template('tutorialsearch.html')
-=======
         return render_template("tutorialsearch.html")
->>>>>>> develop_sonya_strength_workout_generation
     else:
         return render_template("tutorialsearch.html")
 
@@ -120,7 +105,6 @@ def signup():
     return render_template("signup.html", form=form)
 
 
-<<<<<<< HEAD
 @app.route("/cardio_data")
 def cardio_data():
     return render_template("cardio_data_input.html")
@@ -129,28 +113,28 @@ def cardio_data():
 @app.route("/cardio_workout", methods=["GET", "POST"])
 def cardio_workout():
     if request.method == "POST":
-        workout = create_workout(request.form)
+        workout = create_cardio_workout(request.form)
         return render_template("generated_cardio_workout.html", result=workout)
 
 
 
 
-def create_workout(request: dict) -> dict:
+def create_cardio_workout(request: dict) -> dict:
     swim = request.get("swim")
     jog = request.get("jog")
-    jumpropes = request.get("jumpropes")
-    jumpingjacks = request.get("jumpingjacks")
+    jumpropes = request.get("jump ropes")
+    jumpingjacks = request.get("jumping jacks")
     result = {
         "swim": swim,
         "jog": jog,
-        "jumpropes": jumpropes,
-        "jumpingjacks": int(jumpingjacks)
+        "jump ropes": jumpropes,
+        "jumping jacks": int(jumpingjacks)
     }
-    workout = json.loads(proxy.check_args(result))
-    workout = format_workout(workout)
+    workout = json.loads(cardio_proxy.check_args(result))
+    workout = format_cardio_workout(workout)
     return workout
 
-def format_workout(request: dict) -> dict:
+def format_cardio_workout(request: dict) -> dict:
     result = {}
     for week, value1 in request.items():
         result[reword(week)] = {}
@@ -174,26 +158,8 @@ def format_workout(request: dict) -> dict:
 
     return result
 
-def reword(word: str) -> str:
-    if "set-" in word:
-        return "set " + word[4]
-    if "week-" in word:
-        return "Week " + word[5]
-    switcher = {
-        "overhead_press": "overhead press",
-        "bench_press": "bench press",
-        "tricep_pushdown": "tricep pushdown",
-        "face_pulls": "face pulls",
-        "ab_wheel": "ab wheel",
-        "russian_twists": "russian twists",
-    }
 
-    return switcher.get(word, word)
-
-@app.route('/WorkOut', methods=['GET', 'POST'])
-=======
 @app.route("/WorkOut", methods=["GET", "POST"])
->>>>>>> develop_sonya_strength_workout_generation
 def workout():
     form = WorkOutForm()
     if form.is_submitted():
@@ -224,12 +190,12 @@ def create_workout(request: dict) -> dict:
         "squat": int(squat),
         "deadlift": int(deadlift),
     }
-    workout = json.loads(proxy.check_args(result))
-    workout = format_workout(workout)
+    workout = json.loads(strength_proxy.check_args(result))
+    workout = format_strength_workout(workout)
     return workout
 
 
-def format_workout(request: dict) -> dict:
+def format_strength_workout(request: dict) -> dict:
     result = {}
     for week, value1 in request.items():
         result[reword(week)] = {}
