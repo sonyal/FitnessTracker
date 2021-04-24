@@ -105,6 +105,9 @@ def signup():
 
     return render_template("signup.html", form=form)
 
+@app.route("/workout_select")
+def workout_select():
+    return render_template("workout_selector.html")
 
 @app.route("/flex_data")
 def flex_data():
