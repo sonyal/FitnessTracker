@@ -2,8 +2,8 @@
 
 {% block content %}
 
-<h2>Sign Up</h2>
-<form action = "" method="post">
+<h3 align = "center" >Sign Up</h2>
+<form action = "" method="post" align = "center">
     <p>
         {{form.username.label}} <br>
         {{form.username(size=30)}}
@@ -13,7 +13,20 @@
         {{form.password(size=30)}}
     </p>
     <p>
+        {{form.confirm_password.label}} <br>
+        {{form.confirm_password(size=30)}}
+    </p>
+    <p>
+        {{form.weight.label}} <br>
+        {{form.weight(size=30)}}
+    </p>
+    <p>
+        {{form.height.label}} <br>
+        {{form.height(size=30)}}
+    </p>
+    <p>
         {{form.submit()}}
     </p>
+    
 </form>
 {% endblock %}

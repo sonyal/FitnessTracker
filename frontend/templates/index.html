@@ -43,8 +43,15 @@
 						</p>
 						<p
 							style="border-bottom-width: 0px;border-bottom-style: solid;margin-bottom: 0px;padding-bottom: 100px;padding-top: 0px;">
+							{% if user.is_authenticated %}
+							<h5> {{"Welcome back " + user.username}}
+								<a class="btn btn-primary btn-large" href="{{ url_for('user_page') }}">Profile</a> 
+								<a class="btn btn-primary btn-large" href="{{ url_for('log_out') }}">Log out</a>
+							</h5>
+							{% else %}
 							<a class="btn btn-primary btn-large" href="{{ url_for('login') }}">Log in</a>
 							<a class="btn btn-primary btn-large" href="{{ url_for('signup') }}">Sign Up</a>
+							{% endif %}
 						</p>
 					</article>
 				</div>
