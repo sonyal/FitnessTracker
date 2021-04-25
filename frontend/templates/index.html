@@ -17,32 +17,19 @@
 
 <body>
 
+
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
 				<nav class="navbar navbar-expand-lg navbar-light bg-light">
-					<table float="left">
-						<tbody>
-							<tr>
-								<td>
-									<a href="index.html"><img src="../static/logo.png"
-											alt="Fitness Tracker logo has dumbell icon inside head icon"></a>
-								</td>
-								<td>
-									<span>&nbsp;&nbsp;</span>
-								</td>
-								<td>
-									<a class="navbar-brand" href="index.html">Fitness Tracker</a>
-								</td>
-								<td>
-									<a href="{{ url_for('tutorial') }}">Tutorial Search</a>
-								</td>
-								<td>
-									<!-- <a class="nav-link" href="#">Link</a> -->
-								</td>
-							</tr>
-						</tbody>
-					</table>
+					<span>
+						<a href="{{ url_for('home') }}"><img src="../static/logo.png"
+								alt="Fitness Tracker logo has dumbell icon inside head icon"></a>
+						<span>&nbsp;&nbsp;</span>
+						<a class="navbar-brand" href="{{ url_for('home') }}">Fitness Tracker</a>
+						<a href="{{ url_for('tutorial') }}">Tutorial Search</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="{{ url_for('workout_select') }}">Create New Workout</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</span>
 				</nav>
 				<div class="jumbotron"
 					style="padding-top: 0px;padding-bottom: 0px;padding-left: 0px;padding-right: 0px;">
@@ -56,11 +43,15 @@
 						</p>
 						<p
 							style="border-bottom-width: 0px;border-bottom-style: solid;margin-bottom: 0px;padding-bottom: 100px;padding-top: 0px;">
+							{% if user.is_authenticated %}
+							<h5> {{"Welcome back " + user.username}}
+								<a class="btn btn-primary btn-large" href="{{ url_for('user_page') }}">Profile</a> 
+								<a class="btn btn-primary btn-large" href="{{ url_for('log_out') }}">Log out</a>
+							</h5>
+							{% else %}
 							<a class="btn btn-primary btn-large" href="{{ url_for('login') }}">Log in</a>
-						</p>
-						<p
-							style="border-bottom-width: 0px;border-bottom-style: solid;margin-bottom: 0px;padding-bottom: 100px;padding-top: 0px;">
 							<a class="btn btn-primary btn-large" href="{{ url_for('signup') }}">Sign Up</a>
+							{% endif %}
 						</p>
 					</article>
 				</div>
