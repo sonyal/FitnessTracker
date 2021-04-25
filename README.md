@@ -113,6 +113,12 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
 - In terminal, ensure directory is set to `fitness-tracker`
 - Run the command `pytest backend/tests`
 
+### Frontend Tests
+- Requires pytest, which can be installed using `pip install -U pytest`
+- In terminal, ensure directory is set to `fitness-tracker`
+- Run the command `pytest frontend`
+
+
 ## Team-Contributions
 
 ### Adam Aguilera
@@ -135,6 +141,11 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
 - Created the Tutorial search bar with its functionality 
 - Added a proxy that validates the input for the search bar
 - Created 4 tests to test for the input functionality
+- Sprint 2
+- Made test for frontend such as test_app
+- Created Cardio workout code for backend
+- Created Html files for the cardio schedule
+- Modified app.py to include cardio workout
  
 ### John Blanco
 - Static webpages for exercise Tutorials
