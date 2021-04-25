@@ -1,4 +1,4 @@
-from ..tutorialsearch import TestLinkProxy
+from tutorialsearch import TestLinkProxy
 import unittest
 import os
 
@@ -8,7 +8,7 @@ class SearchTests(unittest.TestCase):
         test_link = TestLinkProxy()
         test1 = test_link.test_link("fsdlsdjfklsd")
         self.assertEqual(test1, -1)
-        test2 = test_link.test_link(("",""))
+        test2 = test_link.test_link(("", ""))
         self.assertEqual(test2, -1)
         test3 = test_link.test_link(5)
         self.assertEqual(test3, -1)
