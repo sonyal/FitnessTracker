@@ -16,11 +16,7 @@ class TestLinkProxy:
             return 1
         if link == "Strength" or link == "strength":
             return 2
-        if link == "WeightLoss" or link == "weightloss" or "Weightloss" or "Weight Loss" or "Weight loss" or \
-                "Weight loss":
-            return 3
-        if link == "WeightLoss" or link == "weightloss" or "Weightloss" or "Weight Loss" or "Weight loss" or \
-                "Weight loss" or "Weight-Loss" or "Weight-Loss":
+        if link == "WeightLoss" or link == "weightloss":
             return 3
         return -1
 

@@ -1,6 +1,6 @@
 from flask import Flask, redirect, url_for, render_template, flash, request
-from tutorialsearch import RegistrationForm, TestLinkProxy
-from forms import SignUpForm, LoginForm
+from .tutorialsearch import RegistrationForm, TestLinkProxy
+from .forms import SignUpForm, WorkOutForm, LoginForm
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user, current_user, LoginManager, UserMixin
@@ -34,6 +34,7 @@ class User(db.Model, UserMixin):
 @app.route("/")
 def home():
     return render_template('index.html', user=current_user)
+
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
@@ -80,7 +81,7 @@ def cardiovascular():
     return render_template("cardio.html")
 
 
-@app.route("/Flexibility", methods=["GET", "POST"])
+@app.route("/Flexibility", methods=['GET', 'POST'])
 def flexibility():
     return render_template("flex.html")
 
@@ -89,11 +90,13 @@ def flexibility():
 def strength():
     return render_template("Strength.html")
 
+
 @app.route("/WeightLoss", methods=['GET', 'POST'])
 def weightloss():
     return render_template('weightloss.html')
 
-@app.route("/tutorial", methods=["GET", "POST"])
+
+@app.route("/tutorial", methods=['GET', 'POST'])
 def tutorial():
     if request.method == "POST":
         user = request.form["nm"]
@@ -307,5 +310,5 @@ def reword(word: str) -> str:
 if __name__ == "__main__":
     app.run(debug=True)
 
-if __name__ == "__main__":
-    app.run()
+if __name__ == '__main__':
+    app.run(host="0.0.0.0", debug=True)

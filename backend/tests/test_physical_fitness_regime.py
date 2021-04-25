@@ -1,5 +1,6 @@
 import unittest
 from backend import physical_fitness_regime
+import json
 
 
 def get_valid_request():
@@ -74,3 +75,12 @@ class PhysicalFitnessTests(unittest.TestCase):
                 for workout_name in output[week][day]['core']:
                     workout = output[week][day]['core'][workout_name]
                     self.assertTrue(len(workout) == 5 or len(workout) == 6)
+
+    def test_json(self):
+        request = get_valid_request()
+        output = physical_fitness_regime.make_month_workout_json(request)
+        self.assertTrue(type(output) is str)
+        self.assertTrue('week-1' in output)
+        self.assertTrue('week-2' in output)
+        self.assertTrue('week-3' in output)
+        self.assertTrue('week-4' in output)
