@@ -1,14 +1,15 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField
+from wtforms import StringField, PasswordField, IntegerField, SubmitField
 
-
-class SignUpForm(FlaskForm):
+class LoginForm(FlaskForm):
     username = StringField('Username')
     password = PasswordField('Password')
-    submit = SubmitField('Sign up')
+    submit = SubmitField('Log in')
 
-
-class WorkOutForm(FlaskForm):
+class SignUpForm(FlaskForm):
+    username = StringField('Enter Your Username')
+    password = PasswordField('Enter Your Password')
+    confirm_password = PasswordField('Comfirm Your Password')
     weight = StringField('Enter Your Weight')
-    height = StringField('Enter Your height')
-    submit = SubmitField('Submit')
+    height = StringField('Enter Your Height')
+    submit = SubmitField('Sign up')

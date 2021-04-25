@@ -16,6 +16,8 @@ class TestLinkProxy:
             return 1
         if link == "Strength" or link == "strength":
             return 2
+        if link == "WeightLoss" or link == "weightloss":
+            return 3
         return -1
 
 
