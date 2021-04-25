@@ -1,4 +1,4 @@
-import app
+
 import json
 from temp_backend import physical_cardio_proxy as cardio_proxy
 from temp_backend import physical_fitness_proxy as strength_proxy
