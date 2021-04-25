@@ -27,7 +27,7 @@ def load_user(id):
 # Model for plan which belongs to User
 # One User can have multi Plan
 class Plan(db.Model):
-    id = db.Column(db.Integer, primary_key = True)\
+    id = db.Column(db.Integer, primary_key = True)
     plan = db.Column(db.JSON)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 

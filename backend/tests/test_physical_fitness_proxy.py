@@ -16,6 +16,7 @@ class PhysicalFitnessProxyTests(unittest.TestCase):
         fp.close()
         # remove the test file
         os.remove('test_proxy_valid_args.txt')
+        print(output)
         self.assertTrue('week-1' in output)
         self.assertTrue('week-2' in output)
         self.assertTrue('week-3' in output)
