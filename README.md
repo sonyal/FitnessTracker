@@ -116,11 +116,21 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
 - In terminal, ensure directory is set to `fitness-tracker`
 - Run command `python3 backend/app.py`
 
-
-### Backend Tests
-- Requires pytest, which can be installed using `pip install -U pytest`
-- In terminal, ensure directory is set to `fitness-tracker`
-- Run the command `pytest backend/tests`
+#Important for Coverage testing
+- From our code design, we can't have coverage tested normally and our app to run
+- To test backend coverage, first ensure the directory is set to `backend`
+- this can be done by typing `cd backend` from the `fitness-tracker` folder in the terminal
+- Run the command `coverage run -m unittest discover` 
+- Run the command `coverage report`
+- type `cd ..` to return to your home menu
+- For testing frontend coverage
+- this can be done by typing `cd frontend` from the `fitness-tracker` folder in the terminal
+- Run the command `coverage run -m unittest discover` 
+- Run the command `coverage report`
+## Backend Tests
+- Requires unittests, which can be installed using `pip install unittest`
+- In terminal, ensure directory is set to `backend`
+- Run the command `python -m unittest discover`
 
 ### Frontend Tests
 - Requires unittests, which can be installed using `pip install unittest`
