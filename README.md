@@ -116,7 +116,7 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
 - In terminal, ensure directory is set to `fitness-tracker`
 - Run command `python3 backend/app.py`
 
-#Important for Coverage testing
+# Important for Coverage testing
 - From our code design, we can't have coverage tested normally and our app to run
 - To test backend coverage, first ensure the directory is set to `backend`
 - this can be done by typing `cd backend` from the `fitness-tracker` folder in the terminal
