@@ -123,9 +123,9 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
 - Run the command `pytest backend/tests`
 
 ### Frontend Tests
-- Requires pytest, which can be installed using `pip install -U pytest`
-- In terminal, ensure directory is set to `fitness-tracker`
-- Run the command `pytest frontend`
+- Requires unittests, which can be installed using `pip install unittest`
+- In terminal, ensure directory is set to `fitness-tracker/frontend`
+- Run the command `python -m unittest discover`
 
 
 ## Team-Contributions
