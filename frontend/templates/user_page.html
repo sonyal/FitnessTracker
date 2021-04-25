@@ -62,5 +62,11 @@
                 <input type="submit" value="Update">
              </form>
         </h3>
+		<h3 align="center"> Plans </h3>
+		<ul class="list-group list-group-flush" id="plans"> 
+			{% for plan in user.plans %}
+			{{ plan.plan }}
+			{% endfor %}
+		</ul>
     </div>
 </body>

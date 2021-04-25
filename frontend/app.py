@@ -1,13 +1,13 @@
 from flask import Flask, redirect, url_for, render_template, flash, request
-from .tutorialsearch import RegistrationForm, TestLinkProxy
-from .forms import SignUpForm, LoginForm
+from tutorialsearch import RegistrationForm, TestLinkProxy
+from forms import SignUpForm, LoginForm
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user, current_user, LoginManager, UserMixin
 from os import path
-from .temp_backend import physical_cardio_proxy as cardio_proxy
-from .temp_backend import physical_fitness_proxy as strength_proxy
-from  .temp_backend import physical_flex_proxy as flex_proxy
+from temp_backend import physical_cardio_proxy as cardio_proxy
+from temp_backend import physical_fitness_proxy as strength_proxy
+from  temp_backend import physical_flex_proxy as flex_proxy
 import json
 
 
@@ -24,12 +24,21 @@ login_manager.init_app(app)
 def load_user(id):
     return User.query.get(int(id))
 
+# Model for plan which belongs to User
+# One User can have multi Plan
+class Plan(db.Model):
+    id = db.Column(db.Integer, primary_key = True)\
+    # plan = db.Column(db.JSON)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+
+# User Model which stores all the User information
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key = True)
     username = db.Column(db.String(50), unique = True)
     password = db.Column(db.String(50))
     weight = db.Column(db.String(30))
     height = db.Column(db.String(30))
+    plans = db.relationship('Plan')
     
 @app.route("/")
 def home():
@@ -153,18 +162,26 @@ def confirm_password(p1, p2):
         return False
 
 @app.route("/workout_select")
+@login_required
 def workout_select():
-    return render_template("workout_selector.html")
+    return render_template("workout_selector.html", user=current_user)
 
 @app.route("/flex_data")
+@login_required
 def flex_data():
-    return render_template("flex_data_input.html")
+    return render_template("flex_data_input.html", user=current_user)
 
 @app.route("/flex_workout", methods=["GET", "POST"])
+@login_required
 def flex_workout():
     if request.method == "POST":
         workout = create_flex_workout(request.form)
-        return render_template("generated_flex_workout.html", result=workout)
+        if workout:
+            new_plan = Plan(plan=workout, user_id=current_user.id)
+            db.session.add(new_plan)
+            db.session.commit()
+
+    return render_template("generated_flex_workout.html", result=workout, user=current_user)
 
 def create_flex_workout(request: dict) -> dict:
     tricepsstretch = request.get("triceps stretch")
@@ -196,14 +213,20 @@ def format_flex_workout(request: dict) -> dict:
     return result
 
 @app.route("/cardio_data")
+@login_required
 def cardio_data():
-    return render_template("cardio_data_input.html")
+    return render_template("cardio_data_input.html", user=current_user)
 
 @app.route("/cardio_workout", methods=["GET", "POST"])
+@login_required
 def cardio_workout():
     if request.method == "POST":
         workout = create_cardio_workout(request.form)
-        return render_template("generated_cardio_workout.html", result=workout)
+        if workout:
+            new_plan = Plan(plan=workout, user_id=current_user.id)
+            db.session.add(new_plan)
+            db.session.commit()
+        return render_template("generated_cardio_workout.html", result=workout, user=current_user)
 
 def create_cardio_workout(request: dict) -> dict:
     swim = request.get("swim")
@@ -233,26 +256,23 @@ def format_cardio_workout(request: dict) -> dict:
                     for thing, value5 in value4.items():
                         result[reword(week)][day][location][exercise][thing] = value5
     return result
-  
-
-@app.route("/WorkOut", methods=["GET", "POST"])
-def workout():
-    form = WorkOutForm()
-    if form.is_submitted():
-        result = request.form
-    return render_template("WorkOut.html", form=form)
-
 
 @app.route("/strength_data")
+@login_required
 def strength_data():
-    return render_template("strength_data_input.html")
+    return render_template("strength_data_input.html", user=current_user)
 
 
 @app.route("/strength_workout", methods=["GET", "POST"])
+@login_required
 def strength_workout():
     if request.method == "POST":
         workout = create_workout(request.form)
-        return render_template("generated_strength_workout.html", result=workout)
+        if workout:
+            new_plan = Plan(plan=workout, user_id=current_user.id)
+            db.session.add(new_plan)
+            db.session.commit()
+        return render_template("generated_strength_workout.html", result=workout, user=current_user)
 
 def create_workout(request: dict) -> dict:
     overhead_press = request.get("overhead_press")
