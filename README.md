@@ -9,7 +9,7 @@
 ## Description
 Fitness Tracker is a website to help generate a workout regime. Currently users are able to generate a workout through downloading the repository and following the instructions below.
 
-## Frontend
+## Frontend 
 
 ## Downloading the app
 - Ensure git is installed on machine 

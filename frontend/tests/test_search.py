@@ -1,4 +1,4 @@
-from tutorialsearch import TestLinkProxy
+from ..tutorialsearch import TestLinkProxy
 import unittest
 import os
 
