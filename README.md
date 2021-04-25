@@ -57,24 +57,20 @@ it goes to the following page with the tutorial.
      - Link to specific workouts if Searched
 
 ### Login Page
-- allows users to sign in by comparing input information to the database
-- Style formatting for page will be added in next sprint
+- allows users to login in by comparing input information to the database
+- The system now will remember the user as long as the browser is on
+- Flask message when login information is wrong
+- Some pages are now requierd to be loged in to view
 
 ### Signup Page
-- The signup page requires users to enter their username and password information 
-- Style formatting for page will be added in next sprint
-- navigation bar to workout page
-- In the next sprint 
-     - Be able to store user information 
-     - validating user information 
-     - proxy for invalid inputs
+- The signup page requires users to enter their username and password information (some other information is added)
+- User information will be stored
+- The password will be encrypted
 
-### Workout Page
-- The workout page requires users to enter their pyhsical information, (weight, height)
-- navigation bar to signup page 
-- Style formatting for page will be added in next sprint
-- In the next sprint 
-     - provide a plan based on user's physical condition
+### User page
+- When user is loged in user can acess to the user page by the left up icon or the profile button in the home page
+- This page will display the user information
+- User is able to modify some of their information here
 
 ### Tutorial Page
 - There's a search bar that allows the user (theoretically) to search specific workouts or workout categories such as Cardiovascular, Flexibility, and Strength.
@@ -83,6 +79,9 @@ it goes to the following page with the tutorial.
 - In the next Sprint:
      - YouTube videos for each exercise will either be embedded or linked to provide the user with a demonstration.
      - Style formatting for page will be added
+
+## database
+- Stores all the information for this web
 
 ## Backend
 
@@ -148,9 +147,16 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
 - Wrote part of frontend documentation 
 
 ### Roger Luo
+Spint 1
 - Login page
 - modified sign up page so now it really creates an new user
 - database to store the user information
+Sprint 2
+- Add functionality for login page
+- Merged sign up page and workout page, stored all the information when a new user is created
+- Updated database
+- Created User page which display the user information which stored in the databse
+- Format a little bit login, sign up and profile page makes them looks a little prettier
 
 
 ### Yifan Qin
