@@ -80,6 +80,15 @@ it goes to the following page with the tutorial.
      - YouTube videos for each exercise will either be embedded or linked to provide the user with a demonstration.
      - Style formatting for page will be added
 
+### Flexibility workout page
+- The user needs to enter their capability of certain exercises, in order to get a plan designed for him/her. 
+- The exercises/workout generated includes:
+   - upper body : triceps stretch, Neck-and-Shoulder Release. 
+   - Lower body: sit and reach, up and over
+- In the next Sprint:
+   - complete flexibility workout input proxy
+   - improve style, content and formatting of flexibility workout tutorial page. 
+
 ## database
 - Stores all the information for this web
 
@@ -171,7 +180,12 @@ Sprint 2
 
 
 ### Yifan Qin
-- Workout page design
-- Sign up page design
-- Merging & link signup and home pages 
-- README editing
+- Sprint 1 
+  - Workout page design
+  - Sign up page design
+  - Merging & link signup and home pages 
+  - README editing
+- Sprint 2 
+  - Flexibility input page design (html files), as well as input proxy
+  - implement flexibility workout plan generation algorithm and webpage
+  - edit README about flexibility workout documentation
