@@ -1,13 +1,13 @@
 from flask import Flask, redirect, url_for, render_template, flash, request
-from tutorialsearch import RegistrationForm, TestLinkProxy
-from forms import SignUpForm, WorkOutForm, LoginForm
+from .tutorialsearch import RegistrationForm, TestLinkProxy
+from .forms import SignUpForm, LoginForm
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user, current_user, LoginManager, UserMixin
 from os import path
-from temp_backend import physical_cardio_proxy as cardio_proxy
-import temp_backend.physical_fitness_proxy as strength_proxy
-import temp_backend.physical_flex_proxy as flex_proxy
+from .temp_backend import physical_cardio_proxy as cardio_proxy
+from .temp_backend import physical_fitness_proxy as strength_proxy
+from  .temp_backend import physical_flex_proxy as flex_proxy
 import json
 
 
