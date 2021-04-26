@@ -1,5 +1,5 @@
 import unittest
-from backend import physical_fitness_regime
+from backend.physical_fitness_regime import make_month_workout, make_month_workout_json
 
 
 def get_valid_request():
@@ -14,7 +14,7 @@ def get_valid_request():
 class PhysicalFitnessTests(unittest.TestCase):
     def test_weeks_exist(self):
         request = get_valid_request()
-        output = physical_fitness_regime.make_month_workout(request)
+        output = make_month_workout(request)
         self.assertTrue('week-1' in output)
         self.assertTrue('week-2' in output)
         self.assertTrue('week-3' in output)
@@ -22,7 +22,7 @@ class PhysicalFitnessTests(unittest.TestCase):
 
     def test_days_exist(self):
         request = get_valid_request()
-        output = physical_fitness_regime.make_month_workout(request)
+        output = make_month_workout(request)
         # first week
         self.assertTrue('sunday' in output['week-1'])
         self.assertTrue('monday' in output['week-1'])
@@ -46,7 +46,7 @@ class PhysicalFitnessTests(unittest.TestCase):
 
     def test_has_core_and_accessory_workouts(self):
         request = get_valid_request()
-        output = physical_fitness_regime.make_month_workout(request)
+        output = make_month_workout(request)
         workout_days = ['sunday', 'monday', 'wednesday', 'friday']
         for week_num in range(1, 5):
             week = 'week-' + str(week_num)
@@ -56,7 +56,7 @@ class PhysicalFitnessTests(unittest.TestCase):
 
     def test_number_of_workouts_in_core_and_accessory(self):
         request = get_valid_request()
-        output = physical_fitness_regime.make_month_workout(request)
+        output = make_month_workout(request)
         workout_days = ['sunday', 'monday', 'wednesday', 'friday']
         for week_num in range(1, 5):
             week = 'week-' + str(week_num)
@@ -66,7 +66,7 @@ class PhysicalFitnessTests(unittest.TestCase):
 
     def test_number_of_sets_in_core(self):
         request = get_valid_request()
-        output = physical_fitness_regime.make_month_workout(request)
+        output = make_month_workout(request)
         workout_days = ['sunday', 'monday', 'wednesday', 'friday']
         for week_num in range(1, 5):
             week = 'week-' + str(week_num)
@@ -77,7 +77,7 @@ class PhysicalFitnessTests(unittest.TestCase):
 
     def test_json(self):
         request = get_valid_request()
-        output = physical_fitness_regime.make_month_workout_json(request)
+        output = make_month_workout_json(request)
         self.assertTrue(type(output) is str)
         self.assertTrue('week-1' in output)
         self.assertTrue('week-2' in output)

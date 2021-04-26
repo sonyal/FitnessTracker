@@ -1,6 +1,6 @@
 import unittest
 import os
-from app import app, Plan, User
+from .app import app, Plan, User
 from appmethods import Appmethods
 from werkzeug.security import generate_password_hash, check_password_hash
 
