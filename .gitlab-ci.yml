@@ -27,4 +27,4 @@ before_script:
 
 test:
   script:
-    - pytest --cov=backend tests
+    - python3 -m pytest --cov=backend
