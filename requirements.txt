@@ -3,5 +3,8 @@ flask==1.1.2
 wtforms-validators==1.0.0
 flask-wtf==0.14.3
 pytest==6.2.3
+pytest-cov=2.11.1
+py=1.10.0
+pluggy=0.13.1
 flask-sqlalchemy==2.5.1
 flask-login==0.5.0
