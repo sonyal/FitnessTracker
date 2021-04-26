@@ -156,12 +156,12 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
     - Added a proxy that validates input for workout regime returning helper output for incorrect inputs
 
 ### Gaurav Arora (16%)
-- Sprint 2
+- Sprint 2:
     - Made test for frontend such as test_app
     - Created Cardio workout code for backend
     - Created Html files for the cardio schedule
     - Modified app.py to include cardio workout
-- Sprint 1
+- Sprint 1:
     - Created the Baseline Flask application that everyone merged with.
     - Edited the home page and tutorial html pages to work with flask
     - Created the tutorial Search html pages
@@ -171,9 +171,16 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
     - Created 4 tests to test for the input functionality
  
 ### John Blanco (16%)
-- Static webpages for exercise Tutorials
-- Merging with Tutorial search functionality
-- README documentation writing, reviewing, and editing.
+-Sprint 2:
+    - Separated workout tutorial pages into their own HTML files strength.html, cardio.html, and flex.html.
+    - Wrote instructions for each exercise listed within our workout tutorial pages.
+    - Embedded video into each exercise listed within our workout tutorial pages.
+    - Ensured the tutorial pages played well with Flask.
+    - README documentation writing, reviewing, and editing.
+-Sprint 1:
+    - Static webpages for exercise Tutorials
+    - Merging with Tutorial search functionality
+    - README documentation writing, reviewing, and editing.
 
 ### Sonya Lew (16%)
 - Designed homepage
@@ -182,24 +189,25 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
 - Integrated workout generators into website
 
 ### Roger Luo (16%)
-Sprint 1
-    - Login page
-    - modified sign up page so now it really creates an new user
-    - database to store the user information
-Sprint 2
+- Sprint 2:
     - Add functionality for login page
     - Merged sign up page and workout page, stored all the information when a new user is created
     - Updated database
     - Created User page which display the user information which stored in the database
     - Format a little bit login, sign up and profile page makes them looks a little prettier
+- Sprint 1:
+    - Login page
+    - modified sign up page so now it really creates an new user
+    - database to store the user information
+
 
 ### Yifan Qin (16%)
-- Sprint 1 
+- Sprint 2:
+  - Flexibility input page design (html files), as well as input proxy
+  - implement flexibility workout plan generation algorithm and webpage
+  - edit README about flexibility workout documentation
+- Sprint 1: 
   - Workout page design
   - Sign up page design
   - Merging & link signup and home pages 
   - README editing
-- Sprint 2 
-  - Flexibility input page design (html files), as well as input proxy
-  - implement flexibility workout plan generation algorithm and webpage
-  - edit README about flexibility workout documentation
