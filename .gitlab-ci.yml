@@ -21,10 +21,10 @@ cache:
 before_script:
   - python -V  # Print out python version for debugging
   - pip install virtualenv pytest-cov
+  - pip install -r requirements.txt
   - virtualenv venv
   - source venv/bin/activate
 
 test:
   script:
     - pytest --cov=backend backend/tests
-    - pytest --cov=frontend frontend/tests

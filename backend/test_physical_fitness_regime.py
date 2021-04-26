@@ -1,5 +1,6 @@
 import unittest
-from backend import physical_fitness_regime
+
+import physical_fitness_regime
 import json
 
 
