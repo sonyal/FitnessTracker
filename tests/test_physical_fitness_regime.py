@@ -1,5 +1,5 @@
 import unittest
-from backend.physical_fitness_regime import make_month_workout, make_month_workout_json
+from .backend.physical_fitness_regime import make_month_workout, make_month_workout_json
 
 
 def get_valid_request():

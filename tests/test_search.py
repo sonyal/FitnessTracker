@@ -1,11 +1,11 @@
-from .tutorialsearch import TempLinkProxy
+import tutorialsearch
 import unittest
 import os
 
 
 class SearchTests(unittest.TestCase):
     def test_incorret_inputs(self):
-        link = TempLinkProxy()
+        link = tutorialsearch.TempLinkProxy()
         test1 = link.test_link("fsdlsdjfklsd")
         self.assertEqual(test1, -1)
         test2 = link.test_link(("", ""))
@@ -16,21 +16,21 @@ class SearchTests(unittest.TestCase):
         self.assertEqual(test4, -1)
 
     def test_flexibility(self):
-        link = TempLinkProxy()
+        link = tutorialsearch.TempLinkProxy()
         test1 = link.test_link("flexibility")
         self.assertEqual(test1, 1)
         test1 = link.test_link("Flexibility")
         self.assertEqual(test1, 1)
 
     def test_cardio(self):
-        link = TempLinkProxy()
+        link = tutorialsearch.TempLinkProxy()
         test1 = link.test_link("cardiovascular")
         self.assertEqual(test1, 0)
         test1 = link.test_link("Cardiovascular")
         self.assertEqual(test1, 0)
 
     def test_strength(self):
-        link = TempLinkProxy()
+        link = tutorialsearch.TempLinkProxy()
         test1 = link.test_link("Strength")
         self.assertEqual(test1, 2)
         test1 = link.test_link("strength")
