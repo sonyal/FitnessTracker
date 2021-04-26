@@ -171,13 +171,13 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
     - Created 4 tests to test for the input functionality
  
 ### John Blanco (16%)
--Sprint 2:
+- Sprint 2:
     - Separated workout tutorial pages into their own HTML files strength.html, cardio.html, and flex.html.
     - Wrote instructions for each exercise listed within our workout tutorial pages.
     - Embedded video into each exercise listed within our workout tutorial pages.
     - Ensured the tutorial pages played well with Flask.
     - README documentation writing, reviewing, and editing.
--Sprint 1:
+- Sprint 1:
     - Static webpages for exercise Tutorials
     - Merging with Tutorial search functionality
     - README documentation writing, reviewing, and editing.
