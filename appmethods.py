@@ -1,8 +1,8 @@
 
 import json
-from temp_backend import physical_cardio_proxy as cardio_proxy
-from temp_backend import physical_fitness_proxy as strength_proxy
-from temp_backend import physical_flex_proxy as flex_proxy
+from backend import physical_cardio_proxy as cardio_proxy
+from backend import physical_fitness_proxy as strength_proxy
+from backend import physical_flex_proxy as flex_proxy
 
 
 class Appmethods:
