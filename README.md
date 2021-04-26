@@ -143,7 +143,7 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
 
 ## Team-Contributions
 
-### Adam Aguilera
+### Adam Aguilera (16%)
 - Sprint 2:
     - Integrated docker for running the application
     - Added a requirements.txt to make installing packages easier for local execution / docker
@@ -155,48 +155,45 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
     - Added continuous integration for the backed , running tests automatically when a merge is created
     - Added a proxy that validates input for workout regime returning helper output for incorrect inputs
 
-### Gaurav Arora
-- Created the Baseline Flask application that everyone merged with.
-- Edited the home page and tutorial html pages to work with flask
-- Created the tutorial Search html pages
-- added basic navigation bar to tutorial and tutorial search pages
-- Created the Tutorial search bar with its functionality 
-- Added a proxy that validates the input for the search bar
-- Created 4 tests to test for the input functionality
-<<<<<<< HEAD
-=======
+### Gaurav Arora (16%)
 - Sprint 2
-- Made test for frontend such as test_app
-- Created Cardio workout code for backend
-- Created Html files for the cardio schedule
-- Modified app.py to include cardio workout
->>>>>>> release-2.0
+    - Made test for frontend such as test_app
+    - Created Cardio workout code for backend
+    - Created Html files for the cardio schedule
+    - Modified app.py to include cardio workout
+- Sprint 1
+    - Created the Baseline Flask application that everyone merged with.
+    - Edited the home page and tutorial html pages to work with flask
+    - Created the tutorial Search html pages
+    - added basic navigation bar to tutorial and tutorial search pages
+    - Created the Tutorial search bar with its functionality 
+    - Added a proxy that validates the input for the search bar
+    - Created 4 tests to test for the input functionality
  
-### John Blanco (20%)
+### John Blanco (16%)
 - Static webpages for exercise Tutorials
 - Merging with Tutorial search functionality
 - README documentation writing, reviewing, and editing.
 
-### Sonya Lew (20%)
+### Sonya Lew (16%)
 - Designed homepage
 - Created all graphics used
 - Wrote part of frontend documentation 
 - Integrated workout generators into website
 
-### Roger Luo
-Spint 1
-- Login page
-- modified sign up page so now it really creates an new user
-- database to store the user information
+### Roger Luo (16%)
+Sprint 1
+    - Login page
+    - modified sign up page so now it really creates an new user
+    - database to store the user information
 Sprint 2
-- Add functionality for login page
-- Merged sign up page and workout page, stored all the information when a new user is created
-- Updated database
-- Created User page which display the user information which stored in the databse
-- Format a little bit login, sign up and profile page makes them looks a little prettier
+    - Add functionality for login page
+    - Merged sign up page and workout page, stored all the information when a new user is created
+    - Updated database
+    - Created User page which display the user information which stored in the database
+    - Format a little bit login, sign up and profile page makes them looks a little prettier
 
-
-### Yifan Qin
+### Yifan Qin (16%)
 - Sprint 1 
   - Workout page design
   - Sign up page design

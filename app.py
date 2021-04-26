@@ -1,14 +1,14 @@
 from flask import Flask, redirect, url_for, render_template, flash, request
-from tutorialsearch import RegistrationForm, TestLinkProxy
+from tutorialsearch import RegistrationForm, TempLinkProxy
 from forms import SignUpForm, LoginForm
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user, current_user, LoginManager, UserMixin
 from os import path
 from appmethods import Appmethods
-from temp_backend import physical_cardio_proxy as cardio_proxy
-from temp_backend import physical_fitness_proxy as strength_proxy
-from temp_backend import physical_flex_proxy as flex_proxy
+from backend import physical_cardio_proxy as cardio_proxy
+from backend import physical_fitness_proxy as strength_proxy
+from backend import physical_flex_proxy as flex_proxy
 import json
 
 
@@ -117,8 +117,8 @@ def weightloss():
 def tutorial():
     if request.method == "POST":
         user = request.form["nm"]
-        test_link = TestLinkProxy()
-        test_results = test_link.test_link(user)
+        test_link = TempLinkProxy()
+        test_results = test_link(user)
         if test_results == -1:
             flash("Not a valid Workout Plan", "danger")
         if test_results == 0:
@@ -134,7 +134,7 @@ def tutorial():
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
-    if not path.exists('frontend/fitness_database.db'):
+    if not path.exists('fitness_database.db'):
         db.create_all(app=app)
 
     form = SignUpForm()
@@ -231,9 +231,6 @@ def strength_workout():
             db.session.commit()
         return render_template("generated_strength_workout.html", result=workout, user=current_user)
 
-
-if __name__ == "__main__":
-    app.run(debug=True)
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=True)

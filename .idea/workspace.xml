@@ -2,7 +2,81 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a8af1cb-7da5-421a-90cc-e8778209c59a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/frontend/appmethods.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/appmethods.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.coverage" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitlab-ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.gitlab-ci.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.coverage" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/physical_fitness_proxy.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/physical_fitness_proxy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/test_physical_fitness_proxy.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/test_physical_fitness_regime.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_physical_fitness_regime.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/tests/.coverage" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/tests/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.coverage" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/appmethods.py" beforeDir="false" afterPath="$PROJECT_DIR$/appmethods.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/fitness_database.db" beforeDir="false" afterPath="$PROJECT_DIR$/fitness_database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap-grid.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/css/bootstrap-grid.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap-grid.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/css/bootstrap-grid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap-grid.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/css/bootstrap-grid.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap-reboot.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/css/bootstrap-reboot.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/css/bootstrap-reboot.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/css/bootstrap-reboot.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/demo.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/demo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/demo1.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/demo1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/static/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/fonts/glyphicons-halflings-regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/fonts/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/fonts/glyphicons-halflings-regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/js/popper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/popper.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/team.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/team.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/temp_backend/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/temp_backend/physical_cardio_proxy.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/physical_cardio_proxy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/temp_backend/physical_cardio_regime.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/physical_cardio_regime.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/temp_backend/physical_fitness_proxy.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/temp_backend/physical_fitness_regime.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/temp_backend/physical_flex_proxy.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/physical_flex_proxy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/temp_backend/physical_flex_regime.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/physical_flex_regime.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/Strength.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Strength.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/WorkOut.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/WorkOut.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/cardio.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cardio.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/cardio_data_input.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cardio_data_input.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/flex.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/flex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/flex_data_input.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/flex_data_input.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/generated_cardio_workout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/generated_cardio_workout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/generated_flex_workout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/generated_flex_workout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/generated_strength_workout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/generated_strength_workout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/strength_data_input.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/strength_data_input.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/tutorialsearch.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/tutorialsearch.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/user_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/weightloss.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/weightloss.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/workout_selector.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/workout_selector.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/test_newtest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_newtest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/test_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_search.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/tests/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/tutorialsearch.py" beforeDir="false" afterPath="$PROJECT_DIR$/tutorialsearch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,12 +108,14 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/tests" />
       <recent name="C:\SPB_Data\NewProject435\fitness-tracker\backend" />
       <recent name="C:\SPB_Data\NewProject435\fitness-tracker\frontend" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Unittests in frontend" type="tests" factoryName="Unittests" nameIsGenerated="true">
+    <configuration name="Unittests in /Users/adamaguilera/PycharmProjects/fitness-tracker-fix/frontend" type="tests" factoryName="Unittests" nameIsGenerated="true">
       <module name="fitness-tracker" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -55,7 +131,22 @@
       <method v="2" />
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="0a8af1cb-7da5-421a-90cc-e8778209c59a" name="Default Changelist" comment="" />
@@ -71,7 +162,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -81,7 +174,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/frontend/test_search.py</url>
+          <url>file://$PROJECT_DIR$/tests/test_search.py</url>
           <line>9</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>

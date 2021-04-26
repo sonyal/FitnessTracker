@@ -1,7 +1,5 @@
 import unittest
-
-import physical_fitness_regime
-import json
+from backend import physical_fitness_regime
 
 
 def get_valid_request():
