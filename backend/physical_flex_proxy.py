@@ -2,11 +2,18 @@ import argparse
 from .physical_flex_regime import make_month_workout_json
 
 def check_args(request: dict) -> dict:
-    """ Upon calling get_args, a parser is created that checks the validity of the parameters passed and formats them
-    into a Namespace object which can be used to retrieve the parameters
+    """" Upon calling get_args, a parser is created that checks the validity of the parameters passed and calls workout generator
+        to return a dict with a complete month's flexibility workout regime 
 
+    Args:
+        request: a dictionary with 4 values
+            triceps stretch: a tuple with the workout name and the maximum reps the user can do for this workout
+            Neck-and-Shoulder Release: a tuple with the workout name and the maximum reps the user can do for this workout
+            sit and reach: a tuple with the workout name and the maximum reps the user can do for this workout
+            up and over: a tuple with the workout name and the maximum reps the user can do for this workout
+        
      Returns:
-        args: A Namespace object with all of the parameters required to create a physical workout regime
+        args: A dict with all of the parameters containing a flexibility workout regime
     """
     request_contains_triceps = len(request) == 4 and "triceps stretch" in request.keys()
     triceps_is_int = request_contains_triceps and type(request["triceps stretch"]) == int
