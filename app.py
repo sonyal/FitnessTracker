@@ -45,7 +45,7 @@ def login():
         user = User.query.filter_by(username=username).first()
         if user:
             if check_password_hash(user.password, password):
-                login_user(user, remember=False)
+                login_user(user, remember=True)
                 return redirect(url_for('user_page'))
             else:
                 flash('Your Login Information is incorrect, please try again!', category='error')
@@ -59,6 +59,15 @@ def login():
 @login_required
 def log_out():
     logout_user()
+    return redirect(url_for('login'))
+
+@app.route('/delete')
+@login_required
+def delete_account():
+    user = User.query.filter_by(username=current_user.username).first()
+    logout_user()
+    db.session.delete(user)
+    db.session.commit()
     return redirect(url_for('login'))
 
 
@@ -144,7 +153,8 @@ def signup():
                                 weight=weight, height=height)
                 db.session.add(new_user)
                 db.session.commit()
-                return redirect(url_for('login'))
+                login_user(new_user, remember=True)
+                return redirect(url_for('user_page'))
             except Exception:
                 flash('User Creation Failed, please try another username!', category='error')
 
