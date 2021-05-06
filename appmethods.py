@@ -14,12 +14,18 @@ class Appmethods:
         sitandreach = request.get("sit and reach")
         neckandshoulderrelease = request.get("Neck-and-Shoulder Release")
         upandover = request.get("up and over")
+        
+        if tricepsstretch != int or sitandreach != int or neckandshoulderrelease != int or upandover != int:
+            return {"failure": 0}
+
         result = {
             "triceps stretch": tricepsstretch,
             "sit and reach": sitandreach,
             "Neck-and-Shoulder Release": neckandshoulderrelease,
             "up and over": upandover
         }
+
+
         workout = json.loads(flex_proxy.check_args(result))
         workout = self.format_flex_workout(workout)
         return workout
@@ -43,6 +49,10 @@ class Appmethods:
         bench_press = request.get("bench_press")
         squat = request.get("squat")
         deadlift = request.get("deadlift")
+
+        if overhead_press != int or bench_press != int or squat != int or deadlift != int:
+            return {"failure": 0}
+
         result = {
             "overhead_press": int(overhead_press),
             "bench_press": int(bench_press),
@@ -97,6 +107,10 @@ class Appmethods:
         jog = request.get("jog")
         jumpropes = request.get("jump ropes")
         jumpingjacks = request.get("jumping jacks")
+
+        if swim != int or jog != int or jumpropes != int or jumpingjacks != int:
+            return {"failure": 0}
+        
         result = {
             "swim": swim,
             "jog": jog,
