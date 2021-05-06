@@ -95,22 +95,22 @@ def user_page():
 
 @app.route("/Cardiovascular", methods=["GET", "POST"])
 def cardiovascular():
-    return render_template("cardio.html")
+    return render_template("cardio.html", user=current_user)
 
 
 @app.route("/Flexibility", methods=['GET', 'POST'])
 def flexibility():
-    return render_template("flex.html")
+    return render_template("flex.html", user=current_user)
 
 
 @app.route("/Strength", methods=["GET", "POST"])
 def strength():
-    return render_template("Strength.html")
+    return render_template("Strength.html", user=current_user)
 
 
 @app.route("/WeightLoss", methods=['GET', 'POST'])
 def weightloss():
-    return render_template('weightloss.html')
+    return render_template('weightloss.html', user=current_user)
 
 
 @app.route("/tutorial", methods=['GET', 'POST'])
@@ -127,9 +127,9 @@ def tutorial():
             return redirect(url_for("flexibility"))
         if test_results == 2:
             return redirect(url_for("strength"))
-        return render_template("tutorialsearch.html")
+        return render_template("tutorialsearch.html", user=current_user)
     else:
-        return render_template("tutorialsearch.html")
+        return render_template("tutorialsearch.html", user=current_user)
 
 
 @app.route('/signup', methods=['GET', 'POST'])
