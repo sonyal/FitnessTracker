@@ -1,9 +1,9 @@
 from flask import Flask, redirect, url_for, render_template, flash, request
 from tutorialsearch import RegistrationForm, TempLinkProxy
 from forms import SignUpForm, LoginForm
-from flask_sqlalchemy import SQLAlchemy
+from models import db, User, Plan
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_login import login_user, login_required, logout_user, current_user, LoginManager, UserMixin
+from flask_login import login_user, login_required, logout_user, current_user, LoginManager
 from os import path
 from appmethods import Appmethods
 from backend import physical_cardio_proxy as cardio_proxy
@@ -11,11 +11,10 @@ from backend import physical_fitness_proxy as strength_proxy
 from backend import physical_flex_proxy as flex_proxy
 import json
 
-
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///fitness_database.db'
-db = SQLAlchemy(app)
+db.init_app(app)
 
 login_manager = LoginManager()
 login_manager.login_view = 'login'
@@ -24,25 +23,9 @@ login_manager.init_app(app)
 
 @login_manager.user_loader
 def load_user(id):
+    if not path.exists('fitness_database.db'):
+        db.create_all(app=app)
     return User.query.get(int(id))
-
-
-class Plan(db.Model):
-    # Model for plan which belongs to User
-    # One User can have multi Plan
-    id = db.Column(db.Integer, primary_key=True)
-    plan = db.Column(db.JSON)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-
-
-class User(db.Model, UserMixin):
-    # User Model which stores all the User information
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(50), unique=True)
-    password = db.Column(db.String(50))
-    weight = db.Column(db.String(30))
-    height = db.Column(db.String(30))
-    plans = db.relationship('Plan')
 
 
 @app.route("/")
@@ -52,6 +35,8 @@ def home():
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
+    if not path.exists('fitness_database.db'):
+        db.create_all(app=app)
     form = LoginForm()
     if form.is_submitted():
         result = request.form
@@ -136,9 +121,7 @@ def tutorial():
 def signup():
     if not path.exists('fitness_database.db'):
         db.create_all(app=app)
-
     form = SignUpForm()
-
     if form.is_submitted():
         result = request.form
         username = result.get('username')
