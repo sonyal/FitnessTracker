@@ -7,6 +7,7 @@ class Plan(db.Model):
     # Model for plan which belongs to User
     # One User can have multi Plan
     id = db.Column(db.Integer, primary_key=True)
+    plan_type = db.Column(db.String(30))
     plan = db.Column(db.JSON)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 

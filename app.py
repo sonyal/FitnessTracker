@@ -166,13 +166,19 @@ def flex_data():
 @app.route("/flex_workout", methods=["GET", "POST"])
 @login_required
 def flex_workout():
+    plan_type = "flex"
     if request.method == "POST":
         methods = Appmethods()
         workout = methods.create_flex_workout(request.form)
         if workout:
-            new_plan = Plan(plan=workout, user_id=current_user.id)
-            db.session.add(new_plan)
-            db.session.commit()
+            plan = Plan.query.filter_by(plan_type=plan_type).first()
+            if plan:
+                plan.plan = workout
+                db.session.commit()
+            else:
+                new_plan = Plan(plan_type=plan_type, plan=workout, user_id=current_user.id)
+                db.session.add(new_plan)
+                db.session.commit()
 
     return render_template("generated_flex_workout.html", result=workout, user=current_user)
 
@@ -186,13 +192,19 @@ def cardio_data():
 @app.route("/cardio_workout", methods=["GET", "POST"])
 @login_required
 def cardio_workout():
+    plan_type = "cardio"
     if request.method == "POST":
         methods = Appmethods()
         workout = methods.create_cardio_workout(request.form)
         if workout:
-            new_plan = Plan(plan=workout, user_id=current_user.id)
-            db.session.add(new_plan)
-            db.session.commit()
+            plan = Plan.query.filter_by(plan_type=plan_type).first()
+            if plan:
+                plan.plan = workout
+                db.session.commit()
+            else:
+                new_plan = Plan(plan_type=plan_type, plan=workout, user_id=current_user.id)
+                db.session.add(new_plan)
+                db.session.commit()
         return render_template("generated_cardio_workout.html", result=workout, user=current_user)
 
 
@@ -205,13 +217,19 @@ def strength_data():
 @app.route("/strength_workout", methods=["GET", "POST"])
 @login_required
 def strength_workout():
+    plan_type = "strength"
     if request.method == "POST":
         methods = Appmethods()
         workout = methods.create_workout(request.form)
         if workout:
-            new_plan = Plan(plan=workout, user_id=current_user.id)
-            db.session.add(new_plan)
-            db.session.commit()
+            plan = Plan.query.filter_by(plan_type=plan_type).first()
+            if plan:
+                plan.plan = workout
+                db.session.commit()
+            else:
+                new_plan = Plan(plan_type=plan_type, plan=workout, user_id=current_user.id)
+                db.session.add(new_plan)
+                db.session.commit()
         return render_template("generated_strength_workout.html", result=workout, user=current_user)
 
 
