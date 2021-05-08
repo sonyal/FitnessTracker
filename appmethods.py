@@ -10,12 +10,12 @@ class Appmethods:
         self.deck = {}
 
     def create_flex_workout(self, request: dict) -> dict:
-        tricepsstretch = request.get("triceps stretch")
-        sitandreach = request.get("sit and reach")
-        neckandshoulderrelease = request.get("Neck-and-Shoulder Release")
-        upandover = request.get("up and over")
-        
-        if tricepsstretch != int or sitandreach != int or neckandshoulderrelease != int or upandover != int:
+        try:
+            tricepsstretch = int(request.get("triceps stretch"))
+            sitandreach = int(request.get("sit and reach"))
+            neckandshoulderrelease = int(request.get("Neck-and-Shoulder Release"))
+            upandover = int(request.get("up and over"))
+        except ValueError:
             return {"failure": 0}
 
         result = {
@@ -45,12 +45,12 @@ class Appmethods:
         return result
 
     def create_workout(self, request: dict) -> dict:
-        overhead_press = request.get("overhead_press")
-        bench_press = request.get("bench_press")
-        squat = request.get("squat")
-        deadlift = request.get("deadlift")
-
-        if overhead_press != int or bench_press != int or squat != int or deadlift != int:
+        try:
+            overhead_press = int(request.get("overhead_press"))
+            bench_press = int(request.get("bench_press"))
+            squat = int(request.get("squat"))
+            deadlift = int(request.get("deadlift"))
+        except ValueError:
             return {"failure": 0}
 
         result = {
@@ -103,19 +103,19 @@ class Appmethods:
         return switcher.get(word, word)
 
     def create_cardio_workout(self, request: dict) -> dict:
-        swim = request.get("swim")
-        jog = request.get("jog")
-        jumpropes = request.get("jump ropes")
-        jumpingjacks = request.get("jumping jacks")
-
-        if swim != int or jog != int or jumpropes != int or jumpingjacks != int:
+        try:
+            swim = int(request.get("swim"))
+            jog = int(request.get("jog"))
+            jumpropes = int(request.get("jump ropes"))
+            jumpingjacks = int(request.get("jumping jacks"))
+        except ValueError:
             return {"failure": 0}
         
         result = {
             "swim": swim,
             "jog": jog,
             "jump ropes": jumpropes,
-            "jumping jacks": int(jumpingjacks)
+            "jumping jacks": jumpingjacks
         }
         workout = json.loads(cardio_proxy.check_args(result))
         workout = self.format_cardio_workout(workout)

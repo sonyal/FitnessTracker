@@ -37,7 +37,7 @@
     <br>
     {% if result|length == 1 %}
 
-        <h1>Please fill all fields in previous page to receive a workout plan</h1>
+        <h1>Please fill all fields in previous page to receive a workout plan {{ result }}</h1>
         <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ url_for('cardio_data') }}">Previous Page</a></h2>
     {% else %}
 
