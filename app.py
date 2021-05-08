@@ -70,6 +70,25 @@ def delete_account():
     db.session.commit()
     return redirect(url_for('login'))
 
+@app.route('/reset', methods=['GET', 'POST'])
+def reset_password():
+    if request.method == 'POST':
+        origin_password = request.form.get('origin')
+        new_password1 = request.form.get('new_password1')
+        new_password2 = request.form.get('new_password2')
+        if check_password_hash(current_user.password, origin_password):
+            if new_password1 == new_password2:
+                current_user.password = generate_password_hash(new_password1, method='sha256')
+                db.session.commit()
+                flash('Password is reset!', category='succeed')
+                return redirect(url_for('user_page'))
+            else:
+                flash('Two passwords are not matched, please try again!', category='error')
+                
+        else:
+            flash('Origin password is wrong, please try again!', category='error')
+    return render_template('change_password.html', user=current_user)
+
 
 @app.route("/user", methods=['GET', 'POST'])
 @login_required
