@@ -3,8 +3,8 @@ from .physical_fitness_regime import make_month_workout_json
 
 
 def check_args(request: dict) -> dict:
-    """Upon calling get_args, a parser is created that checks the validity of the parameters passed and calls workout generator
-        to return a dict with a complete month's physical workout regime
+    """Upon calling get_args, a parser is created that checks the validity of the parameters passed and calls workout
+        generator to return a dict with a complete month's physical workout regime
 
     Args:
         request: a dictionary with 4 values
@@ -14,7 +14,8 @@ def check_args(request: dict) -> dict:
             deadlift: a tuple with the workout name and the maximum weight the user can do for this workout
 
      Returns:
-        args: A dict with all of the parameters containing a physical workout regime if request is valid. Else, returns single-key dict of "failure" with exit code 0
+        args: A dict with all of the parameters containing a physical workout regime if request is valid. Else,
+        returns single-key dict of "failure" with exit code 0
     """
     request_contains_overhead_press = (
         len(request) == 4 and "overhead_press" in request.keys()
