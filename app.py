@@ -288,13 +288,19 @@ def flex_workout():
     Returns:
         template for generated flex workout
     """
+    plan_type = "flex"
     if request.method == "POST":
         methods = Appmethods()
         workout = methods.create_flex_workout(request.form)
         if workout:
-            new_plan = Plan(plan=workout, user_id=current_user.id)
-            db.session.add(new_plan)
-            db.session.commit()
+            plan = Plan.query.filter_by(plan_type=plan_type).first()
+            if plan:
+                plan.plan = workout
+                db.session.commit()
+            else:
+                new_plan = Plan(plan_type=plan_type, plan=workout, user_id=current_user.id)
+                db.session.add(new_plan)
+                db.session.commit()
 
     return render_template("generated_flex_workout.html", result=workout, user=current_user)
 
@@ -319,13 +325,19 @@ def cardio_workout():
     Returns:
         template for generated cardio workout
     """
+    plan_type = "cardio"
     if request.method == "POST":
         methods = Appmethods()
         workout = methods.create_cardio_workout(request.form)
         if workout:
-            new_plan = Plan(plan=workout, user_id=current_user.id)
-            db.session.add(new_plan)
-            db.session.commit()
+            plan = Plan.query.filter_by(plan_type=plan_type).first()
+            if plan:
+                plan.plan = workout
+                db.session.commit()
+            else:
+                new_plan = Plan(plan_type=plan_type, plan=workout, user_id=current_user.id)
+                db.session.add(new_plan)
+                db.session.commit()
         return render_template("generated_cardio_workout.html", result=workout, user=current_user)
 
 
@@ -349,13 +361,19 @@ def strength_workout():
     Returns:
         template for generated strength workout
     """
+    plan_type = "strength"
     if request.method == "POST":
         methods = Appmethods()
         workout = methods.create_workout(request.form)
         if workout:
-            new_plan = Plan(plan=workout, user_id=current_user.id)
-            db.session.add(new_plan)
-            db.session.commit()
+            plan = Plan.query.filter_by(plan_type=plan_type).first()
+            if plan:
+                plan.plan = workout
+                db.session.commit()
+            else:
+                new_plan = Plan(plan_type=plan_type, plan=workout, user_id=current_user.id)
+                db.session.add(new_plan)
+                db.session.commit()
         return render_template("generated_strength_workout.html", result=workout, user=current_user)
 
 
