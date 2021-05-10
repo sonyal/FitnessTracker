@@ -168,7 +168,8 @@ def signup():
             flash('Password must be at least 12 characters', category='error')
         else:
             try:
-                new_user = User(username=username, password=generate_password_hash(password1, method='sha256'),
+                new_user = User(username=username,
+                                password=generate_password_hash(password1, method='sha256'),
                                 weight=weight, height=height)
                 db.session.add(new_user)
                 db.session.commit()
@@ -199,7 +200,8 @@ def flex_workout():
         methods = Appmethods()
         workout = methods.create_flex_workout(request.form)
         if workout:
-            new_plan = Plan(plan=workout, user_id=current_user.id)
+            new_plan = Plan(plan=workout, user_id=current_user.id,
+                            progress=methods.create_progress(workout))
             db.session.add(new_plan)
             db.session.commit()
 
@@ -219,7 +221,8 @@ def cardio_workout():
         methods = Appmethods()
         workout = methods.create_cardio_workout(request.form)
         if workout:
-            new_plan = Plan(plan=workout, user_id=current_user.id)
+            new_plan = Plan(plan=workout, user_id=current_user.id,
+                            progress=methods.create_progress(workout))
             db.session.add(new_plan)
             db.session.commit()
         return render_template("generated_cardio_workout.html", result=workout, user=current_user)
@@ -238,11 +241,21 @@ def strength_workout():
         methods = Appmethods()
         workout = methods.create_workout(request.form)
         if workout:
-            new_plan = Plan(plan=workout, user_id=current_user.id)
+            new_plan = Plan(plan=workout, user_id=current_user.id,
+                            progress=methods.create_progress(workout))
             db.session.add(new_plan)
             db.session.commit()
         return render_template("generated_strength_workout.html", result=workout, user=current_user)
 
+
+
+@app.route("/user_progress")
+@login_required
+def user_progress():
+    progress = list(current_user.plans)[0].progress
+    return render_template("progress.html",
+                           days=Appmethods().compute_progress_bar(progress),
+                           user=current_user)
 
 if __name__ == '__main__':
     app.run( debug=True)

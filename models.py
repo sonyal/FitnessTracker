@@ -8,6 +8,7 @@ class Plan(db.Model):
     # One User can have multi Plan
     id = db.Column(db.Integer, primary_key=True)
     plan = db.Column(db.JSON)
+    progress = db.Column(db.JSON)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 class User(db.Model, UserMixin):

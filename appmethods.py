@@ -3,7 +3,9 @@ import json
 from backend import physical_cardio_proxy as cardio_proxy
 from backend import physical_fitness_proxy as strength_proxy
 from backend import physical_flex_proxy as flex_proxy
-
+import datetime as dt
+from datetime import datetime
+from datetime import date
 
 class Appmethods:
     def __init__(self):
@@ -140,3 +142,42 @@ class Appmethods:
             return True
         else:
             return False
+
+    def create_progress(self, workout):
+        # today's date in real life
+        today = date.today() - dt.timedelta(10)
+
+        workout_date_dict = {"start_date": today.strftime('%Y-%m-%d')}
+        return workout_date_dict
+
+    # compute the progress. return a list, finished task marked as active, unfinished marked as ""
+    def compute_progress_bar(self, progress):
+        # start date: which is the next monday after the start date
+        start_date = datetime.strptime(progress["start_date"], '%Y-%m-%d')
+
+        # list of dates which has workouts, totally 12 days
+        temp_date = start_date;
+        workout_dates = []
+        i = 3
+        while i > 0:
+            workout_dates.append(self.next_week_day(temp_date, 0))
+            workout_dates.append(self.next_week_day(temp_date, 2))
+            workout_dates.append(self.next_week_day(temp_date, 4))
+            workout_dates.append(self.next_week_day(temp_date, 6))
+            temp_date = self.next_week_day(temp_date, 0)
+            i = i - 1
+
+        today = datetime.now()
+
+        result = []
+        for x in workout_dates:
+            if x < today:
+                result.append({'active_string': 'active', 'day_string': x.strftime('%Y-%m-%d-%W')})
+            else:
+                result.append({'active_string': '', 'day_string': x.strftime('%Y-%m-%d-%W')})
+        return result
+
+    def next_week_day(self, d, x):
+        days_ahead = x - d.weekday()
+        days_ahead += 7
+        return d + dt.timedelta(days_ahead)
