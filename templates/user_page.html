@@ -41,16 +41,15 @@
                 <input type="submit" value="Update">
              </form>
         </h3>
+		<h3 align="center"> Plans
+			<a class="btn btn-primary btn-large" href="{{ url_for('redirect_to_cardio_table') }}">Cardio Plan</a>
+			<a class="btn btn-primary btn-large" href="{{ url_for('redirect_to_flex_table') }}">Flex Plan</a>
+			<a class="btn btn-primary btn-large" href="{{ url_for('redirect_to_strength_table') }}">Strength Plan</a>
+		</h3></br></br>
 		<h3 align="center"> 
 			<a class="btn btn-primary btn-large" href="{{ url_for('delete_account') }}">Delete Account</a>
 			<a class="btn btn-primary btn-large" href="{{ url_for('reset_password') }}">Reset Password</a>
 		</h3>
-		<h3 align="center"> Plans </h3>
-		<ul class="list-group list-group-flush" id="plans"> 
-			{% for plan in user.plans %}
-			{{ plan.plan }}
-			{% endfor %}
-		</ul>
 	</div>
 	{% endblock %}
 </body>
