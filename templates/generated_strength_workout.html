@@ -41,25 +41,25 @@
 </head>
 
 <body>
+    {% extends "base.html"%}
+
+    {% block content %}
+    <br>
+    <br>
+    <br>
+    {% if result|length == 1 %}
+
+        <h1>Please fill all fields in previous page to receive a workout plan</h1>
+        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ url_for('cardio_data') }}">Previous Page</a></h2>
+    {% else %}
+
+    <input type="button" value="Save Workout as PDF" id="btnPrint" />
+    <br>
+    <br>
+    <br>
+
     <form id="form1">
         <div id="dvContainer">
-            {% extends "base.html"%}
-
-            {% block content %}
-            <br>
-            <br>
-            <br>
-            {% if result|length == 1 %}
-
-                <h1>Please fill all fields in previous page to receive a workout plan</h1>
-                <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ url_for('cardio_data') }}">Previous Page</a></h2>
-            {% else %}
-
-            <input type="button" value="Save Workout as PDF" id="btnPrint" />
-            <br>
-            <br>
-            <br>
-
             {% for week, v1 in result.items() %}
                 <h1>{{ week }} </h1>
 
