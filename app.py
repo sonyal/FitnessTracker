@@ -146,6 +146,51 @@ def user_page():
     
     return render_template('user_page.html', user=current_user)
 
+@app.route("/credirect")
+def redirect_to_cardio_table():
+    """
+        Redirect User to work out table page
+    Returns:
+        redirect the user to the cardio workout table if they have one
+        or to the user page if they don't have one
+    """
+    plan_type = "cardio"
+    plan = Plan.query.filter_by(plan_type=plan_type).first()
+    if plan:
+        return render_template('generated_cardio_workout.html', result=plan.plan, user=current_user)
+    flash('You do not have a cardio workout plan yet, please create one!', category='error')
+    return redirect(url_for('user_page'))
+
+@app.route("/fredirect")
+def redirect_to_flex_table():
+    """
+        Redirect User to work out table page
+    Returns:
+        redirect the user to the flex workout table if they have one
+        or to the user page if they don't have one
+    """
+    plan_type = "flex"
+    plan = Plan.query.filter_by(plan_type=plan_type).first()
+    if plan:
+        return render_template('generated_cardio_workout.html', result=plan.plan, user=current_user)
+    flash('You do not have a flex workout plan yet, please create one!', category='error')
+    return redirect(url_for('user_page'))
+
+@app.route("/sredirect")
+def redirect_to_strength_table():
+    """
+        Redirect User to work out table page
+    Returns:
+        redirect the user to the strength workout table if they have one
+        or to the user page if they don't have one
+    """
+    plan_type = "strength"
+    plan = Plan.query.filter_by(plan_type=plan_type).first()
+    if plan:
+        return render_template('generated_cardio_workout.html', result=plan.plan, user=current_user)
+    flash('You do not have a strength workout plan yet, please create one!', category='error')
+    return redirect(url_for('user_page'))
+
 
 @app.route("/Cardiovascular", methods=["GET", "POST"])
 def cardiovascular():
