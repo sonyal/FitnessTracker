@@ -52,7 +52,7 @@
         <h1>Please fill all fields in previous page to receive a workout plan</h1>
         <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ url_for('cardio_data') }}">Previous Page</a></h2>
     {% else %}
-
+    <a class="btn btn-primary btn-large" href="{{ url_for('flex_progress') }}">check progress</a>
     <input type="button" value="Save Workout as PDF" id="btnPrint" />
     <br>
     <br>
