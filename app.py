@@ -136,15 +136,25 @@ def user_page():
     """
     if request.method == 'POST':
         if request.form.get('new_weight'):
-            new_weight = request.form.get('new_weight')
-            current_user.weight = new_weight
-            db.session.commit()
+            element = request.form.get('new_weight')
+            if element.isdigit():
+                newelement = int(element)
+                new_weight = request.form.get('new_weight')
+                current_user.weight = new_weight
+                db.session.commit()
+            else:
+                flash('Incorrect Weight value', category='error')
         else:
-            new_height = request.form.get('new_height')
-            current_user.height = new_height
-            db.session.commit()
+            element = request.form.get('new_height')
+            if element.isdigit():
+                new_height = request.form.get('new_height')
+                current_user.height = new_height
+                db.session.commit()
+            else:
+                flash('Incorrect Height value', category='error')
     
     return render_template('user_page.html', user=current_user)
+
 
 @app.route("/credirect")
 def redirect_to_cardio_table():
@@ -161,6 +171,7 @@ def redirect_to_cardio_table():
     flash('You do not have a cardio workout plan yet, please create one!', category='error')
     return redirect(url_for('user_page'))
 
+
 @app.route("/fredirect")
 def redirect_to_flex_table():
     """
@@ -172,9 +183,10 @@ def redirect_to_flex_table():
     plan_type = "flex"
     plan = Plan.query.filter_by(plan_type=plan_type).first()
     if plan:
-        return render_template('generated_cardio_workout.html', result=plan.plan, user=current_user)
+        return render_template('generated_flex_workout.html', result=plan.plan, user=current_user)
     flash('You do not have a flex workout plan yet, please create one!', category='error')
     return redirect(url_for('user_page'))
+
 
 @app.route("/sredirect")
 def redirect_to_strength_table():
@@ -187,7 +199,7 @@ def redirect_to_strength_table():
     plan_type = "strength"
     plan = Plan.query.filter_by(plan_type=plan_type).first()
     if plan:
-        return render_template('generated_cardio_workout.html', result=plan.plan, user=current_user)
+        return render_template('generated_strength_workout.html', result=plan.plan, user=current_user)
     flash('You do not have a strength workout plan yet, please create one!', category='error')
     return redirect(url_for('user_page'))
 
@@ -247,7 +259,7 @@ def tutorial():
         test_link = TempLinkProxy()
         test_results = test_link.test_link(user)
         if test_results == -1:
-            flash("Not a valid Workout Plan", "danger")
+            flash("Not a valid Workout Plan", category='error')
         if test_results == 0:
             return redirect(url_for("cardiovascular"))
         if test_results == 1:
@@ -426,6 +438,7 @@ def strength_workout():
                 db.session.add(new_plan)
                 db.session.commit()
         return render_template("generated_strength_workout.html", result=workout, user=current_user)
+
 
 @app.route("/flex_progress")
 @login_required
