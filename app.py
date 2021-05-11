@@ -341,9 +341,11 @@ def flex_workout():
             plan = Plan.query.filter_by(plan_type=plan_type).first()
             if plan:
                 plan.plan = workout
+                plan.progress = methods.create_progress(workout)
                 db.session.commit()
             else:
-                new_plan = Plan(plan_type=plan_type, plan=workout, user_id=current_user.id)
+                new_plan = Plan(plan_type=plan_type, plan=workout,
+                                progress=methods.create_progress(workout), user_id=current_user.id)
                 db.session.add(new_plan)
                 db.session.commit()
 
@@ -378,9 +380,11 @@ def cardio_workout():
             plan = Plan.query.filter_by(plan_type=plan_type).first()
             if plan:
                 plan.plan = workout
+                plan.progress = methods.create_progress(workout)
                 db.session.commit()
             else:
-                new_plan = Plan(plan_type=plan_type, plan=workout, user_id=current_user.id)
+                new_plan = Plan(plan_type=plan_type, plan=workout,
+                                progress=methods.create_progress(workout), user_id=current_user.id)
                 db.session.add(new_plan)
                 db.session.commit()
         return render_template("generated_cardio_workout.html", result=workout, user=current_user)
@@ -414,12 +418,52 @@ def strength_workout():
             plan = Plan.query.filter_by(plan_type=plan_type).first()
             if plan:
                 plan.plan = workout
+                plan.progress = methods.create_progress(workout)
                 db.session.commit()
             else:
-                new_plan = Plan(plan_type=plan_type, plan=workout, user_id=current_user.id)
+                new_plan = Plan(plan_type=plan_type, plan=workout,
+                                progress=methods.create_progress(workout), user_id=current_user.id)
                 db.session.add(new_plan)
                 db.session.commit()
         return render_template("generated_strength_workout.html", result=workout, user=current_user)
+
+@app.route("/flex_progress")
+@login_required
+def flex_progress():
+    """
+        It gets the latest "flex" progress from database
+        progress is the time the user create the latest "flex" workout plan
+        It renders a progress bar (labeled with dates), where users can check progress based on real-life time
+    """
+    plan_type = "flex"
+    plan = Plan.query.filter_by(plan_type=plan_type).first()
+    return render_template('progress.html', days=Appmethods().compute_progress_bar(plan.progress), user=current_user)
+
+
+@app.route("/cardio_progress")
+@login_required
+def cardio_progress():
+    """
+        It gets the latest "cardio" progress from database
+        progress is the time the user create the latest "cardio" workout plan
+        It renders a progress bar (labeled with dates), where users can check progress based on real-life time
+    """
+    plan_type = "cardio"
+    plan = Plan.query.filter_by(plan_type=plan_type).first()
+    return render_template('progress.html', days=Appmethods().compute_progress_bar(plan.progress), user=current_user)
+
+
+@app.route("/strength_progress")
+@login_required
+def strength_progress():
+    """
+        It gets the latest "strength" progress from database
+        progress is the time the user create the latest "strength" workout plan
+        It renders a progress bar (labeled with dates), where users can check progress based on real-life time
+    """
+    plan_type = "strength"
+    plan = Plan.query.filter_by(plan_type=plan_type).first()
+    return render_template('progress.html', days=Appmethods().compute_progress_bar(plan.progress), user=current_user)
 
 
 if __name__ == '__main__':
