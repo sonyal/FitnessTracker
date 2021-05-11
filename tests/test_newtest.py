@@ -151,14 +151,18 @@ class TestApp(unittest.TestCase):
         reponse = client.post("/user", data=dict(new_weight=100, new_height=100))
         self.assertTrue(reponse is not None, True)
 
+class TestAppMethods(unittest.TestCase):
     def test_confirm_password(self):
         methods = Appmethods()
         request = methods.confirm_password("as", "as")
         self.assertTrue(request, True)
+
+    def test_confirm_password_nonmatching_input(self):
+        methods = Appmethods()
         request = methods.confirm_password("asf", "as")
         self.assertFalse(request, False)
 
-    def test_create_flex_workout(self):
+    def test_create_flex_workout_correct_input(self):
         methods = Appmethods()
 
         tricepsstretch = 100
@@ -178,7 +182,7 @@ class TestApp(unittest.TestCase):
         outp = methods.create_flex_workout(request)
         self.assertTrue(outp, True)
 
-    def test_create_strength_workout(self):
+    def test_create_strength_workout_correct_input(self):
         methods = Appmethods()
 
         overhead_press = 199
@@ -194,7 +198,7 @@ class TestApp(unittest.TestCase):
         outp = methods.create_workout(result)
         self.assertTrue(outp, True)
 
-    def test_create_cardio_workout(self):
+    def test_create_cardio_workout_correct_input(self):
         methods = Appmethods()
 
         swim = 100
@@ -210,7 +214,7 @@ class TestApp(unittest.TestCase):
         outp = methods.create_cardio_workout(result)
         self.assertTrue(outp, True)
 
-    def test_class_Plan(self):
+    def test_class_plan_successful(self):
         methods = Appmethods()
 
         swim = 100
@@ -227,7 +231,7 @@ class TestApp(unittest.TestCase):
         new_plan = Plan(plan=outp, user_id=1)
         self.assertTrue(new_plan, True)
 
-    def test_user_input(self):
+    def test_create_new_user_successful(self):
         methods = Appmethods()
 
         swim = 100
@@ -245,11 +249,139 @@ class TestApp(unittest.TestCase):
                         weight=100, height=100)
         self.assertTrue(new_user, True)
 
-    def test_creat_progress(self):
+    def test_create_new_user_existing_username(self):
+        methods = Appmethods()
+
+        swim = 100
+        jog = 100
+        jumpropes = 100
+        jumpingjacks = 100
+        result = {
+            "swim": swim,
+            "jog": jog,
+            "jump ropes": jumpropes,
+            "jumping jacks": int(jumpingjacks)
+        }
+        outp = methods.create_cardio_workout(result)
+        new_user = User(username="neverused", password=generate_password_hash("hope", method='sha256'),
+                        weight=100, height=100)
+        new_user = User(username="neverused", password=generate_password_hash("hope", method='sha256'),
+                        weight=100, height=100)
+        self.assertFalse(new_user, False)
+
+    def test_create_progress_bar_successful(self):
         methods = Appmethods()
         result = methods.create_progress()
         expect = {"start_date": date.today().strftime('%Y-%m-%d')}
         self.assertEqual(result, expect)
+
+    def test_create_cardio_workout_incomplete_user_input(self):
+        methods = Appmethods()
+
+        swim = 100
+        jog = 100
+        result = {
+            "swim": swim,
+            "jog": jog
+        }
+        outp = methods.create_cardio_workout(result)
+        self.assertEqual(outp, {"failure": 0})
+
+    def test_create_workout_cardio_incorrect_user_input_type(self):
+        methods = Appmethods()
+
+        swim = "a"
+        jog = "bc"
+        jumpropes = "def"
+        jumpingjacks = "ghi"
+        result = {
+            "swim": swim,
+            "jog": jog,
+            "jump ropes": jumpropes,
+            "jumping jacks": jumpingjacks
+        }
+        outp = methods.create_cardio_workout(result)
+        self.assertEqual(outp, {"failure": 0})
+
+    def test_create_flex_workout_wrong_key_names(self):
+        methods = Appmethods()
+
+        swim = 100
+        jog = 100
+        result = {
+            "swim": swim,
+            "jog": jog
+        }
+        outp = methods.create_flex_workout(result)
+        self.assertEqual(outp, {"failure": 0})
+
+    def test_create_flex_workout_incomplete_user_input(self):
+        methods = Appmethods()
+
+        swim = 100
+        jog = 100
+        result = {
+            "swim": swim,
+            "jog": jog
+        }
+        outp = methods.create_flex_workout(result)
+        self.assertEqual(outp, {"failure": 0})
+
+    def test_create_flex_workout_incorrect_user_input_type(self):
+        methods = Appmethods()
+
+        swim = "a"
+        jog = "bc"
+        jumpropes = "def"
+        jumpingjacks = "ghi"
+        result = {
+            "swim": swim,
+            "jog": jog,
+            "jump ropes": jumpropes,
+            "jumping jacks": jumpingjacks
+        }
+        outp = methods.create_flex_workout(result)
+        self.assertEqual(outp, {"failure": 0})
+
+    def test_create_strength_workout_wrong_key_names(self):
+        methods = Appmethods()
+
+        swim = 100
+        jog = 100
+        result = {
+            "swim": swim,
+            "jog": jog
+        }
+        outp = methods.create_strength_workout(result)
+        self.assertEqual(outp, {"failure": 0})
+
+    def test_create_strength_workout_incomplete_user_input(self):
+        methods = Appmethods()
+
+        swim = 100
+        jog = 100
+        result = {
+            "swim": swim,
+            "jog": jog
+        }
+        outp = methods.create_strength_workout(result)
+        self.assertEqual(outp, {"failure": 0})
+
+    def test_create_workout_strength_incorrect_user_input_type(self):
+        methods = Appmethods()
+
+        swim = "a"
+        jog = "bc"
+        jumpropes = "def"
+        jumpingjacks = "ghi"
+        result = {
+            "swim": swim,
+            "jog": jog,
+            "jump ropes": jumpropes,
+            "jumping jacks": jumpingjacks
+        }
+        outp = methods.create_strength_workout(result)
+        self.assertEqual(outp, {"failure": 0})
 
     def test_compute_progress_bar(self):
         methods = Appmethods()
