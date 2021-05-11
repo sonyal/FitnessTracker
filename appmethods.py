@@ -264,7 +264,7 @@ class Appmethods:
         else:
             return False
 
-    def create_progress(self, workout):
+    def create_progress(self):
         """
         Args: workout
         return  today's date in real life, which is also the date workout being created
