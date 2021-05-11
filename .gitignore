@@ -3,5 +3,4 @@ __pycache__/
 backend/__pycache__/
 .coverage
 .idea/
-.idea.idea
-fitness_database.db
+.idea

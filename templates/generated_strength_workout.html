@@ -25,97 +25,72 @@
             box-sizing: border-box;
         }
     </style>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script type="text/javascript">
-        $("#btnPrint").live("click", function () {
-            var divContents = $("#dvContainer").html();
-            var printWindow = window.open('', '', 'height=400,width=800');
-            printWindow.document.write('<html><head><title>Workout PDF</title>');
-            printWindow.document.write('</head><body >');
-            printWindow.document.write(divContents);
-            printWindow.document.write('</body></html>');
-            printWindow.document.close();
-            printWindow.print();
-        });
-    </script>
 </head>
 
 <body>
-    {% extends "base.html"%}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <span>
+            <a href="{{ url_for('home') }}"><img src="../static/logo.png"
+                    alt="Fitness Tracker logo has dumbell icon inside head icon"></a>
+            <span>&nbsp;&nbsp;</span>
+            <a class="navbar-brand" href="{{ url_for('home') }}">Fitness Tracker</a>
+            <a href="{{ url_for('tutorial') }}">Tutorial Search</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
+    </nav>
+    <br>
+    <br>
+    <br>
+    {% for week, v1 in result.items() %}
+        <h1>{{ week }} </h1>
 
-    {% block content %}
-    <br>
-    <br>
-    <br>
-    {% if result|length == 1 %}
-
-        <h1>Please fill all fields in previous page to receive a workout plan</h1>
-        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ url_for('cardio_data') }}">Previous Page</a></h2>
-    {% else %}
-    <a class="btn btn-primary btn-large" href="{{ url_for('strength_progress') }}">check progress</a>
-    <input type="button" value="Save Workout as PDF" id="btnPrint" />
-    <br>
-    <br>
-    <br>
-
-    <form id="form1">
-        <div id="dvContainer">
-            {% for week, v1 in result.items() %}
-                <h1>{{ week }} </h1>
-
-                <table border=1>
-                    {% for day, v2 in v1.items() %}
-                        <tr>
+        <table border=1>
+            {% for day, v2 in v1.items() %}
+                <tr>
+                    <td>
+                        <h2>{{ day }} </h2>
+                    </td>
+                        {% for area, v3 in v2.items() %}
                             <td>
-                                <h2>{{ day }} </h2>
-                            </td>
-                                {% for area, v3 in v2.items() %}
-                                    <td>
-                                        <h3 ><b>{{area}}: </b></h3>
-                                        <ul style="list-style-type:none;">
-                                            <li>
-                                                {% for exercise, v4 in v3.items() %}
-                                                        <h6><u>{{exercise}}</u>:&nbsp;</h6>
-                                                        {% for set, v5 in v4.items() %}
-                                                            <ul>
-                                                                <li>
-                                                                    <p>
-                                                                        {{set}}:
-                                                                        {% if v5 is mapping %}
-                                                                            {% for reps, v6 in v5.items() %}
-                                                                                <ul>
-                                                                                    <li>{{reps}}: {{v6}}</li>
-                                                                                </ul>
-                                                                            {% endfor %}
-                                                                        {% else %}
-                                                                            {{v5}}
-                                                                    {% endif %}
-                                                                    </p>
-                                                                </li>
-                                                            </ul>
-                                                        {% endfor %}
+                                <h3 ><b>{{area}}: </b></h3>
+                                <ul style="list-style-type:none;">
+                                    <li>
+                                        {% for exercise, v4 in v3.items() %}
+                                                <h6><u>{{exercise}}</u>:&nbsp;</h6>
+                                                {% for set, v5 in v4.items() %}
+                                                    <ul>
+                                                        <li>
+                                                            <p>
+                                                                {{set}}:
+                                                                {% if v5 is mapping %}
+                                                                    {% for reps, v6 in v5.items() %}
+                                                                        <ul>
+                                                                            <li>{{reps}}: {{v6}}</li>
+                                                                        </ul>
+                                                                    {% endfor %}
+                                                                {% else %}
+                                                                    {{v5}}
+                                                            {% endif %}
+                                                            </p>
+                                                        </li>
+                                                    </ul>
                                                 {% endfor %}
-                                            </li>
-                                        </ul>
-                                {% endfor %}
-                                </br>
-                            </td>
-                        </tr>
-                    {% endfor %}
-                </table>
-
+                                        {% endfor %}
+                                    </li>
+                                </ul>
+                        {% endfor %}
+                        </br>
+                    </td>
+                </tr>
             {% endfor %}
+        </table>
 
-            {% endif %}
+    {% endfor %}
 
 
-            <script src="../static/js/jquery.min.js"></script>
-            <script src="../static/js/bootstrap.min.js"></script>
-            <script src="../static/js/scripts.js"></script>
-            {% endblock %}
-        </div>
-    </form>
-	
+
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/scripts.js"></script>
 </body>
 
 </html>
