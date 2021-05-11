@@ -23,15 +23,7 @@
 
 	{% block content %}
 
-     {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-              {% for category, message in messages %}
-                <div class="alert">
-                  {{ message }}
-                </div>
-              {% endfor %}
-            {% endif %}
-    {% endwith %}
+
     <h1> Workout Tutorials </h1>
     <p>Search for various types of Workouts</p>
     <p>Put in a workout you want to search from the list below</p>
