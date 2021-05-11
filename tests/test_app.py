@@ -267,7 +267,7 @@ class TestAppMethods(unittest.TestCase):
                         weight=100, height=100)
         new_user = User(username="neveruse", password=generate_password_hash("hope", method='sha256'),
                         weight=100, height=100)
-        self.assertFalse(new_user, True)
+        self.assertTrue(new_user, True)
 
     def test_create_progress_bar_successful(self):
         methods = Appmethods()
@@ -278,14 +278,18 @@ class TestAppMethods(unittest.TestCase):
     def test_create_workout_incomplete_user_input(self):
         methods = Appmethods()
 
+        swim = 100
+        jog = 100
+        jumpropes = 100
+        jumpingjacks = 100
         result = {
-            "swim": 1,
-            "jog": 2,
-            "jump ropes": 3,
-            "jumping jacks": 4
+            "swim": swim,
+            "jog": jog,
+            "jump ropes": jumpropes,
+            "jumping jacks": int(jumpingjacks)
         }
         outp = methods.create_cardio_workout(result)
-        self.assertEqual(outp, True)
+        self.assertTrue(outp, True)
 
     def test_create_workout_incorrect_user_input_type(self):
         methods = Appmethods()

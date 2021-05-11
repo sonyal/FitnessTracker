@@ -200,10 +200,18 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
     - README documentation writing, reviewing, and editing.
 
 ### Sonya Lew (16%)
-- Designed homepage
-- Created all graphics used
-- Wrote part of frontend documentation 
-- Integrated workout generators into website
+- Sprint 3:
+  - Unified page style
+  - Created input validation for workout generator page
+  - Added input validation tests
+- Sprint 2:
+  - Adaped strength workout generator code for site
+  - Merged strength workout generator code with others
+  - Integrated all workout generators into website
+- Sprint 1: 
+  - Designed homepage
+  - Created all graphics used
+  - Wrote part of frontend documentation 
 
 ### Roger Luo (16%)
 - Sprint 2:
