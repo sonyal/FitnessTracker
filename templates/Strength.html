@@ -28,9 +28,8 @@
 </head>
 
 <body>
-	{% extends "base.html"%}
+    <p><a href="{{ url_for('home') }}">Home Page</a> <a href="{{ url_for('tutorial') }}">Tutorial Page</a></p>
 
-	{% block content %}
     <h1> Strength Tutorial Page </h1>
 
     <h3> Squats </h3>
@@ -111,7 +110,6 @@
     <script src="static/js/jquery.min.js"></script>
     <script src="static/js/bootstrap.min.js"></script>
     <script src="static/js/scripts.js"></script>
-	{% endblock %}
 </body>
 
 </html>

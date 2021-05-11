@@ -4,9 +4,7 @@
 * [Description](#description)
 * [Frontend](#frontend)
 * [Backend](#backend)
-* [Developer Documentation](#developer-documentation)
 * [Team Contributions](#team-contributions)
-
 
 ## Description
 Fitness Tracker is a website to help generate a workout regime. Currently users are able to generate a workout through downloading the repository and following the instructions below.
@@ -121,18 +119,6 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
 - In terminal, ensure directory is set to `fitness-tracker`
 - Run command `python3 backend/app.py`
 
-# Developer-Documentation
-
-## Updating Developer Documentation
-- Change into the `/docs` directory using `cd docs`
-- Execute `make html` to generate a new developer documentation in sphinx
-    - You may need some packages to perform this command
-    - Download the documentation theme `pip3 install sphinx_rtd_theme`
-    - Download sphinx here [sphinx-webpage](https://www.sphinx-doc.org/en/master/usage/installation.html)
-## Accessing Developer Documentation
-- Enter into the `/docs/build/html` folder
-- Open the `index.html` file in your local browser
-
 # Important for Coverage testing
 - From our code design, we can't have coverage tested normally and our app to run
 - To test backend coverage, first ensure the directory is set to `backend`
@@ -158,9 +144,6 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
 ## Team-Contributions
 
 ### Adam Aguilera (16%)
-- Sprint 3:
-    - Generated developer docs using sphinx
-    - Made updates to readme
 - Sprint 2:
     - Integrated docker for running the application
     - Added a requirements.txt to make installing packages easier for local execution / docker
