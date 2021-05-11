@@ -272,6 +272,6 @@ class TestApp(unittest.TestCase):
     def test_next_week_day(self):
         methods = Appmethods()
 
-        next_monday = methods.next_week_day(datetime.datetime.now(), 0)
-        next_tuesday = methods.next_week_day(datetime.datetime.now(), 1)
+        next_monday = methods.next_week_day(datetime.datetime.now().date(), 0)
+        next_tuesday = methods.next_week_day(datetime.datetime.now().date(), 1)
         self.assertEqual(next_tuesday, next_monday + dt.timedelta(1))
