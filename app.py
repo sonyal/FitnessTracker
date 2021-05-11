@@ -146,6 +146,51 @@ def user_page():
     
     return render_template('user_page.html', user=current_user)
 
+@app.route("/credirect")
+def redirect_to_cardio_table():
+    """
+        Redirect User to work out table page
+    Returns:
+        redirect the user to the cardio workout table if they have one
+        or to the user page if they don't have one
+    """
+    plan_type = "cardio"
+    plan = Plan.query.filter_by(plan_type=plan_type).first()
+    if plan:
+        return render_template('generated_cardio_workout.html', result=plan.plan, user=current_user)
+    flash('You do not have a cardio workout plan yet, please create one!', category='error')
+    return redirect(url_for('user_page'))
+
+@app.route("/fredirect")
+def redirect_to_flex_table():
+    """
+        Redirect User to work out table page
+    Returns:
+        redirect the user to the flex workout table if they have one
+        or to the user page if they don't have one
+    """
+    plan_type = "flex"
+    plan = Plan.query.filter_by(plan_type=plan_type).first()
+    if plan:
+        return render_template('generated_cardio_workout.html', result=plan.plan, user=current_user)
+    flash('You do not have a flex workout plan yet, please create one!', category='error')
+    return redirect(url_for('user_page'))
+
+@app.route("/sredirect")
+def redirect_to_strength_table():
+    """
+        Redirect User to work out table page
+    Returns:
+        redirect the user to the strength workout table if they have one
+        or to the user page if they don't have one
+    """
+    plan_type = "strength"
+    plan = Plan.query.filter_by(plan_type=plan_type).first()
+    if plan:
+        return render_template('generated_cardio_workout.html', result=plan.plan, user=current_user)
+    flash('You do not have a strength workout plan yet, please create one!', category='error')
+    return redirect(url_for('user_page'))
+
 
 @app.route("/Cardiovascular", methods=["GET", "POST"])
 def cardiovascular():
@@ -296,9 +341,11 @@ def flex_workout():
             plan = Plan.query.filter_by(plan_type=plan_type).first()
             if plan:
                 plan.plan = workout
+                plan.progress = methods.create_progress()
                 db.session.commit()
             else:
-                new_plan = Plan(plan_type=plan_type, plan=workout, user_id=current_user.id)
+                new_plan = Plan(plan_type=plan_type, plan=workout,
+                                progress=methods.create_progress(), user_id=current_user.id)
                 db.session.add(new_plan)
                 db.session.commit()
 
@@ -333,9 +380,11 @@ def cardio_workout():
             plan = Plan.query.filter_by(plan_type=plan_type).first()
             if plan:
                 plan.plan = workout
+                plan.progress = methods.create_progress()
                 db.session.commit()
             else:
-                new_plan = Plan(plan_type=plan_type, plan=workout, user_id=current_user.id)
+                new_plan = Plan(plan_type=plan_type, plan=workout,
+                                progress=methods.create_progress(), user_id=current_user.id)
                 db.session.add(new_plan)
                 db.session.commit()
         return render_template("generated_cardio_workout.html", result=workout, user=current_user)
@@ -369,12 +418,52 @@ def strength_workout():
             plan = Plan.query.filter_by(plan_type=plan_type).first()
             if plan:
                 plan.plan = workout
+                plan.progress = methods.create_progress()
                 db.session.commit()
             else:
-                new_plan = Plan(plan_type=plan_type, plan=workout, user_id=current_user.id)
+                new_plan = Plan(plan_type=plan_type, plan=workout,
+                                progress=methods.create_progress(), user_id=current_user.id)
                 db.session.add(new_plan)
                 db.session.commit()
         return render_template("generated_strength_workout.html", result=workout, user=current_user)
+
+@app.route("/flex_progress")
+@login_required
+def flex_progress():
+    """
+        It gets the latest "flex" progress from database
+        progress is the time the user create the latest "flex" workout plan
+        It renders a progress bar (labeled with dates), where users can check progress based on real-life time
+    """
+    plan_type = "flex"
+    plan = Plan.query.filter_by(plan_type=plan_type).first()
+    return render_template('progress.html', days=Appmethods().compute_progress_bar(plan.progress), user=current_user)
+
+
+@app.route("/cardio_progress")
+@login_required
+def cardio_progress():
+    """
+        It gets the latest "cardio" progress from database
+        progress is the time the user create the latest "cardio" workout plan
+        It renders a progress bar (labeled with dates), where users can check progress based on real-life time
+    """
+    plan_type = "cardio"
+    plan = Plan.query.filter_by(plan_type=plan_type).first()
+    return render_template('progress.html', days=Appmethods().compute_progress_bar(plan.progress), user=current_user)
+
+
+@app.route("/strength_progress")
+@login_required
+def strength_progress():
+    """
+        It gets the latest "strength" progress from database
+        progress is the time the user create the latest "strength" workout plan
+        It renders a progress bar (labeled with dates), where users can check progress based on real-life time
+    """
+    plan_type = "strength"
+    plan = Plan.query.filter_by(plan_type=plan_type).first()
+    return render_template('progress.html', days=Appmethods().compute_progress_bar(plan.progress), user=current_user)
 
 
 if __name__ == '__main__':

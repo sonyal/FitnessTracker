@@ -9,6 +9,7 @@ class Plan(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     plan_type = db.Column(db.String(30))
     plan = db.Column(db.JSON)
+    progress = db.Column(db.JSON)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 class User(db.Model, UserMixin):
