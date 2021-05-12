@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+            .div1 {
+              width: 300px;
+              height: 100px;
+              border: 1px solid black;
+              box-sizing: border-box;
+            }
+             a.navigation-link {
+              padding: 0px 10px;
+              word-wrap: normal;
+              display: inline-block;
+            }
+    </style>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+    <p><a href="{{ url_for('home') }}">Home Page</a>    <a href="{{ url_for('tutorial') }}">Tutorial Page</a></p>
+    <h1> This is the Home Page</h1>
+</body>
+</html>

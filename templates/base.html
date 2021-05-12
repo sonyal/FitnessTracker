@@ -31,7 +31,7 @@
                             <a href="{{ url_for('workout_select') }}">Create New
                                 Workout</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             {% if user.is_authenticated %}
-                            <h5> {{"Welcome Back, " + user.username + "!"}}
+                            <h5> {{"Welcome back " + user.username}}
                                 <a class="btn btn-primary btn-large" href="{{ url_for('user_page') }}">Profile</a>
                                 <a class="btn btn-primary btn-large" href="{{ url_for('log_out') }}">Log out</a>
                             </h5>

@@ -19,11 +19,24 @@
     <title>Tutorial Search</title>
 </head>
 <body>
+<<<<<<< HEAD
     {% extends "base.html"%}
 
 	{% block content %}
 
 
+=======
+    <p><a href="{{ url_for('home') }}">Home Page</a>    <a href="{{ url_for('tutorial') }}">Tutorial Page</a></p>
+     {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+    {% endwith %}
+>>>>>>> 9b17ebe08f164cdcd6168c1c5ae0fd60e9f57ccd
     <h1> Workout Tutorials </h1>
     <p>Search for various types of Workouts</p>
     <p>Put in a workout you want to search from the list below</p>
@@ -48,8 +61,6 @@
     </ul>
     <script src="static/js/jquery.min.js"></script>
 	<script src="static/js/bootstrap.min.js"></script>
-    <script src="static/js/scripts.js"></script>
-{% endblock %}
-    
+	<script src="static/js/scripts.js"></script>
 </body>
 </html>

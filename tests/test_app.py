@@ -18,37 +18,37 @@ class TestApp(unittest.TestCase):
         response = client.get("/login")
         self.assertTrue(response is not None, True)
 
-    def test_cardiovascular_deployment(self):
+    def test_CardioVascular(self):
         client = app.test_client()
         response = client.get("/Cardiovascular")
         self.assertTrue(response is not None, True)
 
-    def test_flex_deployment(self):
+    def test_flex(self):
         client = app.test_client()
         response = client.get("/Flexibility")
         self.assertTrue(response is not None, True)
 
-    def test_strength_deployment(self):
+    def test_strength(self):
         client = app.test_client()
         response = client.get("/Strength")
         self.assertTrue(response is not None, True)
 
-    def test_weightloss_deployment(self):
+    def test_Weightloss(self):
         client = app.test_client()
         response = client.get("/WeightLoss")
         self.assertTrue(response is not None, True)
 
-    def test_tutorial_deployment(self):
+    def test_tutorial(self):
         client = app.test_client()
         response = client.get("/tutorial")
         self.assertTrue(response is not None, True)
 
-    def test_signup_deployment(self):
+    def test_signup(self):
         client = app.test_client()
         response = client.get("/signup")
         self.assertTrue(response is not None, True)
 
-    def test_workout_deployment(self):
+    def test_workout(self):
         client = app.test_client()
         response = client.get("/WorkOut")
         self.assertTrue(response is not None, True)
@@ -59,25 +59,25 @@ class TestApp(unittest.TestCase):
         reponse = client.post("/login", data=dict(username='joy', password='happy'))
         self.assertTrue(reponse is not None, True)
 
-    def test_tutorial_post_weightloss(self):
+    def test_tutorial_post_Weightloss(self):
         client = app.test_client()
         response = client.get("/tutorial")
         reponse = client.post("/tutorial", data=dict(nm='WeightLoss'))
         self.assertTrue(reponse is not None, True)
 
-    def test_tutorial_post_flexibility(self):
+    def test_tutorial_post_Flexibility(self):
         client = app.test_client()
         response = client.get("/tutorial")
         reponse = client.post("/tutorial", data=dict(nm='Flexibility'))
         self.assertTrue(reponse is not None, True)
 
-    def test_tutorial_post_strength(self):
+    def test_tutorial_post_Strength(self):
         client = app.test_client()
         response = client.get("/tutorial")
         reponse = client.post("/tutorial", data=dict(nm='Strength'))
         self.assertTrue(reponse is not None, True)
 
-    def test_tutorial_post_cardio(self):
+    def test_tutorial_post_Cardio(self):
         client = app.test_client()
         response = client.get("/tutorial")
         reponse = client.post("/tutorial", data=dict(nm='Cardiovascular'))
@@ -151,8 +151,12 @@ class TestApp(unittest.TestCase):
         reponse = client.post("/user", data=dict(new_weight=100, new_height=100))
         self.assertTrue(reponse is not None, True)    
 
+<<<<<<< HEAD:tests/test_app.py
 class TestAppMethods(unittest.TestCase):   
     def test_confirm_password(self):
+=======
+    def test_confirmPassword(self):
+>>>>>>> 9b17ebe08f164cdcd6168c1c5ae0fd60e9f57ccd:tests/test_newtest.py
         methods = Appmethods()
         request = methods.confirm_password("as", "as")
         self.assertTrue(request, True)
@@ -162,7 +166,11 @@ class TestAppMethods(unittest.TestCase):
         request = methods.confirm_password("asf", "as")
         self.assertFalse(request, False)
 
+<<<<<<< HEAD:tests/test_app.py
     def test_create_flex_workout_correct_input(self):
+=======
+    def test_createflexworkout(self):
+>>>>>>> 9b17ebe08f164cdcd6168c1c5ae0fd60e9f57ccd:tests/test_newtest.py
         methods = Appmethods()
 
         tricepsstretch = 100
@@ -182,7 +190,11 @@ class TestAppMethods(unittest.TestCase):
         outp = methods.create_flex_workout(request)
         self.assertTrue(outp, True)
 
+<<<<<<< HEAD:tests/test_app.py
     def test_create_strength_workout_correct_input(self):
+=======
+    def test_createStrengthworkout(self):
+>>>>>>> 9b17ebe08f164cdcd6168c1c5ae0fd60e9f57ccd:tests/test_newtest.py
         methods = Appmethods()
 
         overhead_press = 199
@@ -198,7 +210,11 @@ class TestAppMethods(unittest.TestCase):
         outp = methods.create_workout(result)
         self.assertTrue(outp, True)
 
+<<<<<<< HEAD:tests/test_app.py
     def test_create_cardio_workout_correct_input(self):
+=======
+    def test_createCardioworkout(self):
+>>>>>>> 9b17ebe08f164cdcd6168c1c5ae0fd60e9f57ccd:tests/test_newtest.py
         methods = Appmethods()
 
         swim = 100
@@ -214,7 +230,11 @@ class TestAppMethods(unittest.TestCase):
         outp = methods.create_cardio_workout(result)
         self.assertTrue(outp, True)
 
+<<<<<<< HEAD:tests/test_app.py
     def test_class_plan_successful(self):
+=======
+    def test_ClassPlan(self):
+>>>>>>> 9b17ebe08f164cdcd6168c1c5ae0fd60e9f57ccd:tests/test_newtest.py
         methods = Appmethods()
 
         swim = 100
@@ -231,6 +251,7 @@ class TestAppMethods(unittest.TestCase):
         new_plan = Plan(plan=outp, user_id=1)
         self.assertTrue(new_plan, True)
 
+<<<<<<< HEAD:tests/test_app.py
     def test_create_new_user_successful(self):
         methods = Appmethods()
 
@@ -250,6 +271,9 @@ class TestAppMethods(unittest.TestCase):
         self.assertTrue(new_user, True)
 
     def test_create_new_user_existing_username(self):
+=======
+    def test_User(self):
+>>>>>>> 9b17ebe08f164cdcd6168c1c5ae0fd60e9f57ccd:tests/test_newtest.py
         methods = Appmethods()
 
         swim = 100

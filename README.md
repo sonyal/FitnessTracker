@@ -4,9 +4,7 @@
 * [Description](#description)
 * [Frontend](#frontend)
 * [Backend](#backend)
-* [Developer Documentation](#developer-documentation)
 * [Team Contributions](#team-contributions)
-
 
 ## Description
 Fitness Tracker is a website to help generate a workout regime. Currently users are able to generate a workout through downloading the repository and following the instructions below.
@@ -76,6 +74,12 @@ it goes to the following page with the tutorial.
 - When user is loged in user can acess to the user page by the left up icon or the profile button in the home page
 - This page will display the user information
 - User is able to modify some of their information here
+- Delete Count Button: User will be able to delete their account simply pressing the button
+- Change password: Redirect Users to the change password page 
+- Workout buttons: Redirect the users to the generated workout table
+
+### Chnage Passowrd Page
+- Allows users to change their password here.
 
 ### Tutorial Page
 - There's a search bar that allows the user (theoretically) to search specific workouts or workout categories such as Cardiovascular, Flexibility, and Strength.
@@ -237,6 +241,13 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
   - Wrote part of frontend documentation 
 
 ### Roger Luo (16%)
+- Sprint 3:
+    - Delete Account functionality in user page
+    - Change Passowrd functionality: button in user page and a new page for user to change their password
+    - Connect workout generation to user page.
+    - Reform the models for database and moved it to a new files
+    - Created database test Together with Yifan
+    - Reformed Database for Plan and the way updating the workout plan in the database
 - Sprint 2:
     - Add functionality for login page
     - Merged sign up page and workout page, stored all the information when a new user is created

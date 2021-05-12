@@ -1,4 +1,3 @@
-
 import json
 from backend import physical_cardio_proxy as cardio_proxy
 from backend import physical_fitness_proxy as strength_proxy

@@ -15,11 +15,34 @@
 
 </head>
 
-<body>	
-	{% extends "base.html"%}
-
-	{% block content %}
-
+<body>
+    <div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<nav class="navbar navbar-expand-lg navbar-light bg-light">
+					<table float="left">
+						<tbody>
+							<tr>
+								<td>
+									<a href="{{ url_for('user_page') }}"><img src="../static/logo.png"
+											alt="Fitness Tracker logo has dumbell icon inside head icon"></a>
+								</td>
+								<td>
+									<span>&nbsp;&nbsp;</span>
+								</td>
+								<td>
+									<a class="navbar-brand" href="{{ url_for('home') }}">Fitness Tracker</a>
+								</td>
+								<td>
+									<a href="{{ url_for('tutorial') }}">Tutorial Search</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</nav>
+			</div>
+        </div>
+    </div>
     <div>
         <h1 align="center"> User Information </h1>
         <h3 align="center">
@@ -28,28 +51,22 @@
         <h3 align="center">
              {{ "Your Weight: " + user.weight + " kg" }} 
              <form action="" method="post">
-				 New Weight:
-                <input name="new_weight" type="text" size="5">
+                <input name="new_weight" type="text">
                 <input type="submit" value="Update">
              </form>
         </h3>
         <h3 align="center">
              {{ "Your Height: " + user.height + " cm" }} 
              <form action="" method="post">
-				 New Height:
-                <input name="new_height" type="text" size="5">
+                <input name="new_height" type="text">
                 <input type="submit" value="Update">
              </form>
         </h3>
-		<h3 align="center"> Plans
-			<a class="btn btn-primary btn-large" href="{{ url_for('redirect_to_cardio_table') }}">Cardio Plan</a>
-			<a class="btn btn-primary btn-large" href="{{ url_for('redirect_to_flex_table') }}">Flex Plan</a>
-			<a class="btn btn-primary btn-large" href="{{ url_for('redirect_to_strength_table') }}">Strength Plan</a>
-		</h3></br></br>
-		<h3 align="center"> 
-			<a class="btn btn-primary btn-large" href="{{ url_for('delete_account') }}">Delete Account</a>
-			<a class="btn btn-primary btn-large" href="{{ url_for('reset_password') }}">Reset Password</a>
-		</h3>
-	</div>
-	{% endblock %}
+		<h3 align="center"> Plans </h3>
+		<ul class="list-group list-group-flush" id="plans"> 
+			{% for plan in user.plans %}
+			{{ plan.plan }}
+			{% endfor %}
+		</ul>
+    </div>
 </body>

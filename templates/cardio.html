@@ -28,9 +28,7 @@
 </head>
 
 <body>
-	{% extends "base.html"%}
-
-	{% block content %}
+  <p><a href="{{ url_for('home') }}">Home Page</a> <a href="{{ url_for('tutorial') }}">Tutorial Page</a></p>
   <h1> Cardiovascular Tutorial Page </h1>
   <h3> Running </h3>
   <iframe width="703" height="395" src="https://www.youtube.com/embed/_kGESn8ArrU" title="YouTube video player"
@@ -140,7 +138,6 @@
   <script src="static/js/jquery.min.js"></script>
   <script src="static/js/bootstrap.min.js"></script>
   <script src="static/js/scripts.js"></script>
-	{% endblock %}
 </body>
 
 </html>
