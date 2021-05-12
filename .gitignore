@@ -1,0 +1,7 @@
+__pycache__/
+.pytest_cache/
+backend/__pycache__/
+.coverage
+.idea/
+.idea.idea
+fitness_database.db

@@ -1,0 +1,512 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>app module &mdash; fitness-tracker 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> fitness-tracker
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">app module</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">fitness-tracker</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>app module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/app.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-app">
+<span id="app-module"></span><h1>app module<a class="headerlink" href="#module-app" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt id="app.cardio_data">
+<code class="sig-prename descclassname"><span class="pre">app.</span></code><code class="sig-name descname"><span class="pre">cardio_data</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.cardio_data" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Renders our cardio data page and checks if the user is logged in</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>returns template of the cardio data input</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="app.cardio_progress">
+<code class="sig-prename descclassname"><span class="pre">app.</span></code><code class="sig-name descname"><span class="pre">cardio_progress</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.cardio_progress" title="Permalink to this definition">¶</a></dt>
+<dd><p>It gets the latest “cardio” progress from database
+progress is the time the user create the latest “cardio” workout plan
+It renders a progress bar (labeled with dates), where users can check progress based on real-life time</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="app.cardio_workout">
+<code class="sig-prename descclassname"><span class="pre">app.</span></code><code class="sig-name descname"><span class="pre">cardio_workout</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.cardio_workout" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>if the user signals a “get” we return the template of the generated cardio page.
+If the user posts workout correctly we put their workout into the database</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>template for generated cardio workout</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="app.cardiovascular">
+<code class="sig-prename descclassname"><span class="pre">app.</span></code><code class="sig-name descname"><span class="pre">cardiovascular</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.cardiovascular" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Renders our cardiovascular screen and checks if the user is logged in</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>template of the cardiovascular page</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="app.delete_account">
+<code class="sig-prename descclassname"><span class="pre">app.</span></code><code class="sig-name descname"><span class="pre">delete_account</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.delete_account" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>user is deleted from the database and is then logged out</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>template for login page</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="app.flex_data">
+<code class="sig-prename descclassname"><span class="pre">app.</span></code><code class="sig-name descname"><span class="pre">flex_data</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.flex_data" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Renders our flex data input page and checks if the user is logged in</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>template of flex data input page</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="app.flex_progress">
+<code class="sig-prename descclassname"><span class="pre">app.</span></code><code class="sig-name descname"><span class="pre">flex_progress</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.flex_progress" title="Permalink to this definition">¶</a></dt>
+<dd><p>It gets the latest “flex” progress from database
+progress is the time the user create the latest “flex” workout plan
+It renders a progress bar (labeled with dates), where users can check progress based on real-life time</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="app.flex_workout">
+<code class="sig-prename descclassname"><span class="pre">app.</span></code><code class="sig-name descname"><span class="pre">flex_workout</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.flex_workout" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>if the user signals a “get” we return the template of the generated flex page.
+If the user posts workout correctly we put their workout into the database</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>template for generated flex workout</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="app.flexibility">
+<code class="sig-prename descclassname"><span class="pre">app.</span></code><code class="sig-name descname"><span class="pre">flexibility</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.flexibility" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Renders our flexibility screen and checks if the user is logged in</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>template of the flexibility page</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="app.home">
+<code class="sig-prename descclassname"><span class="pre">app.</span></code><code class="sig-name descname"><span class="pre">home</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.home" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Renders our home screen and checks if the user is logged in</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>template of the home page</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="app.load_user">
+<code class="sig-prename descclassname"><span class="pre">app.</span></code><code class="sig-name descname"><span class="pre">load_user</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.load_user" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="app.log_out">
+<code class="sig-prename descclassname"><span class="pre">app.</span></code><code class="sig-name descname"><span class="pre">log_out</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.log_out" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>user is logged out of account and redirected to login page</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>template for login page</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="app.login">
+<code class="sig-prename descclassname"><span class="pre">app.</span></code><code class="sig-name descname"><span class="pre">login</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.login" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Checks log in for application. If the user signals a “get” we return the template of the page for the user to
+login into. If the user posts their username and password we log them in by checking the database for their
+information. If we find it we redirect them to the home page. Otherwise we signal to the user to try again</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>Get- template of the login page
+Post and True - returns user to user page</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="app.redirect_to_cardio_table">
+<code class="sig-prename descclassname"><span class="pre">app.</span></code><code class="sig-name descname"><span class="pre">redirect_to_cardio_table</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.redirect_to_cardio_table" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Redirect User to work out table page</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>redirect the user to the cardio workout table if they have one
+or to the user page if they don’t have one</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="app.redirect_to_flex_table">
+<code class="sig-prename descclassname"><span class="pre">app.</span></code><code class="sig-name descname"><span class="pre">redirect_to_flex_table</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.redirect_to_flex_table" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Redirect User to work out table page</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>redirect the user to the flex workout table if they have one
+or to the user page if they don’t have one</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="app.redirect_to_strength_table">
+<code class="sig-prename descclassname"><span class="pre">app.</span></code><code class="sig-name descname"><span class="pre">redirect_to_strength_table</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.redirect_to_strength_table" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Redirect User to work out table page</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>redirect the user to the strength workout table if they have one
+or to the user page if they don’t have one</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="app.reset_password">
+<code class="sig-prename descclassname"><span class="pre">app.</span></code><code class="sig-name descname"><span class="pre">reset_password</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.reset_password" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the user signals a “get” we return the template of the page for the user to update their reset page.
+If the user posts their password we match the password with the confirm password. If it matches we update the
+password in the database. Otherwise we signal to the user that passwords don’t match.
+Returns:</p>
+<blockquote>
+<div><p>get - template for password change
+post- template for password change if passwords fail otherwise return user page</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt id="app.signup">
+<code class="sig-prename descclassname"><span class="pre">app.</span></code><code class="sig-name descname"><span class="pre">signup</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.signup" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>if the user signals a “get” we return the template of the sign up page.
+If the user posts their info to signup correcty we add their information to the database and redirect them
+to the user page. Otherwise we return the sign up page with the error message.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>get - template of the sign up page
+post - template of user page</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="app.strength">
+<code class="sig-prename descclassname"><span class="pre">app.</span></code><code class="sig-name descname"><span class="pre">strength</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.strength" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Renders our strength age and checks if the user is logged in</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>template of our strength page</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="app.strength_data">
+<code class="sig-prename descclassname"><span class="pre">app.</span></code><code class="sig-name descname"><span class="pre">strength_data</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.strength_data" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Renders our strength data page and checks if the user is logged in</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>returns template for strength data input</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="app.strength_progress">
+<code class="sig-prename descclassname"><span class="pre">app.</span></code><code class="sig-name descname"><span class="pre">strength_progress</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.strength_progress" title="Permalink to this definition">¶</a></dt>
+<dd><p>It gets the latest “strength” progress from database
+progress is the time the user create the latest “strength” workout plan
+It renders a progress bar (labeled with dates), where users can check progress based on real-life time</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="app.strength_workout">
+<code class="sig-prename descclassname"><span class="pre">app.</span></code><code class="sig-name descname"><span class="pre">strength_workout</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.strength_workout" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>if the user signals a “get” we return the template of the generated cardio page.
+If the user posts workout correctly we put their workout into the database</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>template for generated strength workout</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="app.tutorial">
+<code class="sig-prename descclassname"><span class="pre">app.</span></code><code class="sig-name descname"><span class="pre">tutorial</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.tutorial" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>gets the tutorial search template
+If the user posted cardio, flexibility or strength, the user will be redirected to the tutorial page</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>get- template of our tutorial search page
+post - returns page of cardio, flexibility or strength page if successful
+otherwise returns tutorial search page</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="app.user_page">
+<code class="sig-prename descclassname"><span class="pre">app.</span></code><code class="sig-name descname"><span class="pre">user_page</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.user_page" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the user signals a “get” we return the template of the page for the user to update their user page.
+If the user posts their weight and height we update the values in the database with their new information
+Returns:</p>
+<blockquote>
+<div><p>get- template for user page
+post- template for user page with updated user values</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt id="app.weightloss">
+<code class="sig-prename descclassname"><span class="pre">app.</span></code><code class="sig-name descname"><span class="pre">weightloss</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.weightloss" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Renders our weightloss page and checks if the user is logged in</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>template of our weightloss page</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="app.workout_select">
+<code class="sig-prename descclassname"><span class="pre">app.</span></code><code class="sig-name descname"><span class="pre">workout_select</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.workout_select" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Renders our workout select page and checks if the user is logged in</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>template of workout selector</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, team-11.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

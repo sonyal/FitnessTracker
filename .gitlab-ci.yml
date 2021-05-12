@@ -1,7 +1,7 @@
 # This file is a template, and might need editing before it works on your project.
 # Official language image. Look for the different tagged releases at:
 # https://hub.docker.com/r/library/python/tags/
-image: python:3.7
+image: python:3.9.1
 
 # Change pip's cache directory to be inside the project directory since we can
 # only cache local items.
@@ -23,8 +23,9 @@ before_script:
   - pip install virtualenv pytest-cov
   - virtualenv venv
   - source venv/bin/activate
+  - pip install -r requirements.txt
+  - pip3 install pytest-cov
 
 test:
   script:
-    - pytest --cov=backend backend/tests
-    - pytest --cov=frontend frontend/tests
+    - python3 -m pytest tests --cov=backend
