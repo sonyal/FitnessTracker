@@ -11,9 +11,6 @@ Fitness Tracker is a website to help generate a workout regime. Currently users 
 
 ## Frontend 
 
-## Accessing the app
-- The main webpage can be accessed by all computers with internet access [here](https://fitness-tracker.q6m54lmtvi80q.us-east-2.cs.amazonlightsail.com/)
-
 ## Downloading the app
 - Ensure git is installed on machine 
 - Open your terminal and ensure git is running (if a PATH variable is set up, this would simply require entering the command "git") 
@@ -138,11 +135,6 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
 
 # Developer-Documentation
 
-## System Architecture
-- Our app is made using Flask, Python, HTML and SQLAlchemy
-- The most stable build is currently uploaded onto AWS lightsail
-- Below you can find information about code documentation and running tests!
-
 ## Updating Developer Documentation
 - Change into the `/docs` directory using `cd docs`
 - Execute `make html` to generate a new developer documentation in sphinx
@@ -164,7 +156,6 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
 - this can be done by typing `cd frontend` from the `fitness-tracker` folder in the terminal
 - Run the command `coverage run -m unittest discover` 
 - Run the command `coverage report`
-
 ## Backend Tests
 - Requires unittests, which can be installed using `pip install unittest`
 - In terminal, ensure directory is set to `backend`
@@ -182,7 +173,6 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
 - Sprint 3:
     - Generated developer docs using sphinx
     - Made updates to readme
-    - Deployed working container onto AWS
 - Sprint 2:
     - Integrated docker for running the application
     - Added a requirements.txt to make installing packages easier for local execution / docker
