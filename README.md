@@ -191,6 +191,11 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
     - Added a proxy that validates input for workout regime returning helper output for incorrect inputs
 
 ### Gaurav Arora (16%)
+- Sprint 3:
+    - formatted tests to all look similiar
+    - added comments throughout files for documentation
+    - fixed a few bugs such as redirecting to improper pages and incorrect inputs not being checked
+    - made replacement for user workouts with Roger
 - Sprint 2:
     - Made test for frontend such as test_app
     - Created Cardio workout code for backend
