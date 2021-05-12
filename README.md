@@ -87,14 +87,12 @@ it goes to the following page with the tutorial.
 
 ### Create workout page
 - The user needs to enter their capability of certain exercises, in order to get a 4-week/month workout plan designed for them
-- User chooses one of three workout types (strenght, cardio, or flexibility) for the website to create for them
+- User chooses one of three workout types (strength, cardio, or flexibility) for the website to create for them
   - Example- flexibility plan:
     - The exercises/workout generated includes:
       - upper body : triceps stretch, Neck-and-Shoulder Release. 
       - Lower body: sit and reach, up and over
-- In the next Sprint:
-   - complete flexibility workout input proxy
-   - improve style, content and formatting of flexibility workout tutorial page. 
+- Users can now download a pdf file of the generated workout regimen table. 
 
 ### User Progress Page
 - After creating a workout, a user progress is also created.
@@ -211,6 +209,12 @@ physical_fitness_proxy.py: error: the following arguments are required: --bench_
     - Created 4 tests to test for the input functionality
  
 ### John Blanco (16%)
+- Sprint 3:
+    - Implemented PDF download feature for the generated Strength Workout Regimen Table.
+    - Implemented PDF download feature for the generated Flexibility Workout Regimen Table.
+    - Implemented PDF download feature for the generated Cardiovascular Workout Regimen Table.
+    - contributed to minor style errors on website.
+    - README documentation writing, reviewing, and editing.
 - Sprint 2:
     - Separated workout tutorial pages into their own HTML files strength.html, cardio.html, and flex.html.
     - Wrote instructions for each exercise listed within our workout tutorial pages.
