@@ -44,7 +44,7 @@
 						<p
 							style="border-bottom-width: 0px;border-bottom-style: solid;margin-bottom: 0px;padding-bottom: 100px;padding-top: 0px;">
 							{% if user.is_authenticated %}
-							<h5> {{"Welcome back " + user.username}}
+							<h5> {{"Welcome back, " + user.username}}
 								<a class="btn btn-primary btn-large" href="{{ url_for('user_page') }}">Profile</a> 
 								<a class="btn btn-primary btn-large" href="{{ url_for('log_out') }}">Log out</a>
 							</h5>
@@ -135,7 +135,7 @@
 					<br />Check out a sample of one of our workout plans <br />
 				</p>
 				<p>
-					<a class="btn" href="#">View Plan (Coming Soon) »</a>
+					<a class="btn" href="../static/example_plan.pdf">View Plan »</a>
 				</p>
 			</div>
 		</div>
