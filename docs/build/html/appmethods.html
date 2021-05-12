@@ -159,44 +159,192 @@
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">appmethods.</span></code><code class="sig-name descname"><span class="pre">Appmethods</span></code><a class="headerlink" href="#appmethods.Appmethods" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
+<dt id="appmethods.Appmethods.compute_progress_bar">
+<code class="sig-name descname"><span class="pre">compute_progress_bar</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">progress</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#appmethods.Appmethods.compute_progress_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Args: progress ( the date workout was created)
+Returns:  a list of dict, passed dates marked as active, future dates marked as “”</p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="appmethods.Appmethods.confirm_password">
-<code class="sig-name descname"><span class="pre">confirm_password</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#appmethods.Appmethods.confirm_password" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname"><span class="pre">confirm_password</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">bool</span><a class="headerlink" href="#appmethods.Appmethods.confirm_password" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to confirm that two passwords are matching
+Args:</p>
+<blockquote>
+<div><p>p1: string which holds the first password
+p2: string which hold the second password</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>boolean which signals if the two strings are matching</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt id="appmethods.Appmethods.create_cardio_workout">
 <code class="sig-name descname"><span class="pre">create_cardio_workout</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#appmethods.Appmethods.create_cardio_workout" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Upon calling create_cardio_workout, the website gets the swim, jog, jump ropes, and jumping jacks value
+from the website. App.py calls on this method to create a formatted dictionary called workout that
+can be displayed on the website</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>request: a dictionary with 4 values</dt><dd><p>swim: a tuple with the workout name and the maximum distance the user can do for this workout
+jog: a tuple with the workout name and the maximum distance the user can do for this workout
+jump ropes: a tuple with the workout name and the maximum reps the user can do for this workout
+jumping jacks: a tuple with the workout name and the maximum reps the user can do for this workout</p>
+</dd>
+<dt>Returns:</dt><dd><p>args: A dict with all of the parameters containing a physical workout regime if request is valid.
+Else, returns single-key dict of “failure” with exit code 0</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt id="appmethods.Appmethods.create_flex_workout">
 <code class="sig-name descname"><span class="pre">create_flex_workout</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#appmethods.Appmethods.create_flex_workout" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Upon calling create_flex_workout, the website gets the triceps stretch,sit and reach, Neck-and-Shoulder
+Release, and up and over values from the website. App.py calls on this method to create a formatted dictionary
+called workout that can be displayed on the website</p>
+<p>Args:
+request: a dictionary with 4 values</p>
+<blockquote>
+<div><p>triceps stretch: a tuple with the workout name and the maximum reps the user can do for this workout
+Neck-and-Shoulder Release: a tuple with the workout name and the maximum reps the user can do for this
+workout
+sit and reach: a tuple with the workout name and the maximum reps the user can do for this workout
+up and over: a tuple with the workout name and the maximum reps the user can do for this workout</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>args: A dict with all of the parameters containing a flexibility workout regime if request is valid. Else,
+returns single-key dict of “failure” with exit code 0</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="appmethods.Appmethods.create_progress">
+<code class="sig-name descname"><span class="pre">create_progress</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#appmethods.Appmethods.create_progress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Args: workout
+return  today’s date in real life, which is also the date workout being created</p>
+</dd></dl>
 
 <dl class="py method">
 <dt id="appmethods.Appmethods.create_workout">
 <code class="sig-name descname"><span class="pre">create_workout</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#appmethods.Appmethods.create_workout" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Upon calling create_workout, the website gets the overhead press, bench press, squat, and deadlift values
+from the website. App.py calls on this method to create a formatted dictionary called workout that
+can be displayed on the website</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>request: a dictionary with 4 values</dt><dd><p>overhead_press: a tuple with the workout name and the maximum weight the user can do for this
+workout
+bench_press: a tuple with the workout name and the maximum weight the user can do for this workout
+squat: a tuple with the workout name and the maximum weight the user can do for this workout
+deadlift: a tuple with the workout name and the maximum weight the user can do for this workout</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>args: A dict with all of the parameters containing a physical workout regime if request is valid.
+Else, returns single-key dict of “failure” with exit code 0</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt id="appmethods.Appmethods.format_cardio_workout">
 <code class="sig-name descname"><span class="pre">format_cardio_workout</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#appmethods.Appmethods.format_cardio_workout" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Upon calling format_cardio_workout, the method gets a dictionary with the calculated workout for the month.
+This method formats the dictionary to a presentable to the website as a table. This method returns a dictionary
+that can be formatted for the table on the website</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>request: dictionary values for the month</dt><dd><p>week- the week that the workout is occurring
+day - the day of the week that the workout is occurring
+area - area of body where to work
+exercise - specific exercise done
+thing- amount of sets or reps of that exercise</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>args: A dictionary with the workout for the month
+returns: a dictionary with the formatted dictionary for the month</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt id="appmethods.Appmethods.format_flex_workout">
 <code class="sig-name descname"><span class="pre">format_flex_workout</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#appmethods.Appmethods.format_flex_workout" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Upon calling format_flex_workout, the method gets a dictionary with the calculated workout for the month.
+This method formats the dictionary to a presentable to the website as a table. This method returns a dictionary
+that can be formatted for the table on the website</p>
+<dl>
+<dt>Args:</dt><dd><p>request: dictionary values for the month
+week- the week that the workout is occurring
+day - the day of the week that the workout is occurring
+location - area of body where to work
+exercise - specific exercise done
+thing- amount of sets of that exercise</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>args: A dictionary with the workout for the month
+returns: a dictionary with the formatted dictionary for the month</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt id="appmethods.Appmethods.format_strength_workout">
 <code class="sig-name descname"><span class="pre">format_strength_workout</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#appmethods.Appmethods.format_strength_workout" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Upon calling format_strength_workout, the method gets a dictionary with the calculated workout for the month.
+This method formats the dictionary to a presentable to the website as a table. This method returns a dictionary
+that can be formatted for the table on the website
+Args:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>request: dictionary values for the month</dt><dd><p>week- the week that the workout is occurring
+day - the day of the week that the workout is occurring
+area - area of body where to work
+exercise - specific exercise done
+thing- amount of sets or reps of that exercise</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>args: A dictionary with the workout for the month
+returns: a dictionary with the formatted dictionary for the month</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="appmethods.Appmethods.next_week_day">
+<code class="sig-name descname"><span class="pre">next_week_day</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#appmethods.Appmethods.next_week_day" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><p>d: current date
+x: next xx day, next monday: x =0, next Tuesday x = 1 …..</p>
+</dd>
+</dl>
+<p>Returns: the date of the weekday in next week</p>
+</dd></dl>
 
 <dl class="py method">
 <dt id="appmethods.Appmethods.reword">
 <code class="sig-name descname"><span class="pre">reword</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">word</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#appmethods.Appmethods.reword" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Helper method which reformats a string into a readable format. The word will be split up to be displayed
+on the website
+Args:</p>
+<blockquote>
+<div><p>word: a string that needs to changed to be readable on the website</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>a string that is readable</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
