@@ -67,7 +67,7 @@ it goes to the following page with the tutorial.
 - Flask message when login information is wrong
 - Some pages are now requierd to be loged in to view
 
-### Signup Page
+### Signup Page 
 - The signup page requires users to enter their username and password information (some other information is added)
 - User information will be stored
 - The password will be encrypted
